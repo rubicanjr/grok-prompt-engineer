@@ -1,51 +1,41 @@
 # Grok Prompt Engineer
 
-**Versiyon:** v1.9.2  
-**Tarih:** 09.07.2026
+[![CI](https://github.com/rubicanjr/grok-prompt-engineer/actions/workflows/ci.yml/badge.svg)](https://github.com/rubicanjr/grok-prompt-engineer/actions/workflows/ci.yml)
 
-Production-grade prompt engineering governance ve otomasyon sistemi.
+**Grok Prompt Engineer**, Grok ile çalışırken kullanılan prompt’ları, protokolleri ve sistematik süreçleri yönetmek için geliştirilmiş production-grade bir araçtır.
 
 ## Özellikler
 
-- Modular Prompt Architecture
-- Self-Evolving Systems Protocol
-- Execution Engine + Monitoring + Retry Mekanizması
-- Token Efficiency & Context Reset (20+ tur)
-- LLM Fallback Protocol
-- Fully Automatic Rubric Scoring (RubricStore)
+- **Kural Tabanlı Çalışma** (Kural 0–11): Token verimliliği, grounding, hallucination kontrolü, bias önleme gibi protokolleri otomatik uygular.
+- **Rubric Otomasyonu**: Her tur için yapılandırılmış değerlendirme skorları tutar (`RubricStore`).
+- **Self-Evolving Sistem**: Kendi kendini geliştirme ve iyileştirme döngülerini destekler.
+- **Execution Engine**: Tüm süreci güvenli, izlenebilir ve hata toleranslı şekilde çalıştırır.
+- **State Yönetimi**: `StateManager` ve `RubricStore` ile güvenilir dosya tabanlı durum yönetimi.
+- **CI/CD Entegrasyonu**: GitHub Actions ile otomatik test ve çalıştırma.
+- **Test Altyapısı**: `pytest` ile kapsamlı birim ve entegrasyon testleri.
 
-## Klasör Yapısı
+## Proje Yapısı
 grok-prompt-engineer/
-├── .github/workflows/
-│   ├── ci.yml
-│   └── schedule-orchestrator.yml
-├── src/                      # Ana kaynak kod
+├── .github/workflows/     # CI/CD pipeline dosyaları
+├── src/                   # Ana kaynak kod
 │   ├── execution_engine.py
-│   ├── orchestrator.py
 │   ├── state_manager.py
 │   ├── rubric_store.py
-│   ├── monitor_and_alert.py
-│   ├── config.py
-│   ├── errors.py
-│   └── circuit_breaker.py
-├── tests/                    # Test dosyaları
-├── docs/                     # Dokümantasyon
-├── artifacts/                # Çıktılar ve state dosyaları
-├── requirements.txt
-├── README.md
-└── LICENSE
+│   ├── orchestrator.py
+│   └── config.py
+├── tests/                 # Test dosyaları
+├── docs/                  # Dokümantasyon
+├── artifacts/             # Çalışma çıktıları (gitignore)
+└── README.md
 
 ## Kurulum
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/rubicanjr/grok-prompt-engineer.git
 cd grok-prompt-engineer
 
-# Bağımlılıkları kur
+# Sanal ortam oluştur (opsiyonel ama önerilir)
+python -m venv .venv
+source .venv/bin/activate     # Windows: .venv\Scripts\activate
+
 pip install -r requirements.txt
-
-# Testleri çalıştır
-PYTHONPATH=src pytest tests/ -v
-
-# Execution Engine'i manuel çalıştır
-PYTHONPATH=src python src/execution_engine.py --auto
