@@ -1,3 +1,5 @@
+# === .gitignore ===
+
 # Python
 __pycache__/
 *.py[cod]
@@ -20,34 +22,55 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtualenv
+# Virtual Environment
 venv/
 .venv/
 ENV/
 env/
+.conda/
 
-# IDE & OS
+# IDE & Editor
 .idea/
 .vscode/
 *.swp
-.DS_Store
+*.swo
+*~
+.project
+.pydevproject
+.settings/
 
-# Project specific
-artifacts/
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing & Coverage
 .pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.tox/
+
+# Project Specific
+artifacts/
 *.log
 alerts.log
 Usage_Log.md
-personal_files_backup.zip
 backups/
+personal_files_backup.zip
 htmlcov/
-.coverage
-coverage.xml
 
-# Secrets & env
+# Secrets & Environment
 .env
 *.env
 .env.*
+secrets/
+*.pem
+*.key
 
-# Node (varsa)
+# Node.js (varsa)
 node_modules/
+
+# OneDrive & Sync Conflicts (OneDrive + Git uyumu için)
+~$*
+*.tmp
+*.bak

@@ -1,20 +1,35 @@
+# === schedule-orchestrator.yml ===
 name: Daily Orchestrator Run
 
 on:
-  workflow_dispatch:   # Manuel tetikleme + GitHub UI’dan çalıştırılabilir
-  # schedule kaldırıldı (ci.yml ile çakışmasın)
+  schedule:
+    # Her gün sabah 09:00’da çalıştır (UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch:   # Manuel tetikleme için de açık bırakıyoruz
 
 jobs:
   run-orchestrator:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Run Orchestrator
         run: |
-          PYTHONPATH=src python src/orchestrator.py || python artifacts/orchestrator.py
+          PYTHONPATH=src python src/orchestrator.py
+
       - name: Upload logs
         uses: actions/upload-artifact@v4
         if: always()
@@ -22,5 +37,5 @@ jobs:
           name: orchestrator-logs
           path: |
             artifacts/logs/
-            artifacts/Usage_Log.md
             artifacts/alerts.log
+            artifacts/Usage_Log.md

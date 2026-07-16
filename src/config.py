@@ -1,3 +1,5 @@
+import time   # <-- Bunu ekle
+
 """
 Central Configuration & Structured Logging
 Versiyon: v1.1
@@ -11,14 +13,19 @@ tam uyumlu çalışacak şekilde tasarlanmıştır.
 
 import logging
 from pathlib import Path
-import time
-from functools import wraps
-from datetime import datetime
+import logging
+from functools import wraps          # ← Bunu ekle (wraps hatası için)
+from pathlib import Path
 
-# === Paths ===
-ARTIFACTS_DIR = Path("/home/workdir/artifacts")
+# Proje kökünü bul (src klasörünün bir üstü)
+BASE_DIR = Path(__file__).parent.parent
+
+# Artifact ve log klasörleri
+ARTIFACTS_DIR = BASE_DIR / "artifacts"
 LOGS_DIR = ARTIFACTS_DIR / "logs"
-LOGS_DIR.mkdir(exist_ok=True)
+
+# Klasörleri oluştur
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
 # === Logging Configuration ===
 LOG_FORMAT = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
@@ -71,35 +78,28 @@ RETRY_DELAY_SECONDS = 1
 def retry_on_exception(
     max_retries: int = MAX_RETRIES,
     log_retries: bool = False,
-    backoff: str = "fixed",          # "fixed", "exponential", "linear"
+    backoff: str = "fixed",
     base_delay: float = None
 ):
-    """
-    Geliştirilmiş retry decorator.
-
-    Args:
-        max_retries: Maksimum deneme sayısı.
-        log_retries: True ise her başarısız denemede log uyarısı verir.
-        backoff: "fixed", "exponential" veya "linear"
-        base_delay: Gecikme süresi (None ise RETRY_DELAY_SECONDS kullanılır)
-    """
     if base_delay is None:
         base_delay = RETRY_DELAY_SECONDS
 
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            last_exception: Exception | None = None
-            for attempt in range(max_retries):
+            last_exception = None
+            attempts = max_retries + 1   # max_retries=0 → sadece 1 deneme
+
+            for attempt in range(attempts):
                 try:
                     return func(*args, **kwargs)
                 except Exception as e:
                     last_exception = e
-                    if log_retries and attempt < max_retries - 1:
+                    if log_retries and attempt < attempts - 1:
                         logger = logging.getLogger(func.__module__)
-                        logger.warning(f"Retry {attempt + 1}/{max_retries} for {func.__name__}: {e}")
+                        logger.warning(f"Retry {attempt + 1}/{attempts} for {func.__name__}: {e}")
 
-                    if attempt < max_retries - 1:
+                    if attempt < attempts - 1:
                         if backoff == "exponential":
                             delay = base_delay * (2 ** attempt)
                         elif backoff == "linear":
@@ -107,14 +107,13 @@ def retry_on_exception(
                         else:
                             delay = base_delay
                         time.sleep(delay)
-            if last_exception:
-                from errors import ResilienceError, ErrorCode
-                raise ResilienceError(
-                    message=f"Retry exhausted after {max_retries} attempts",
-                    error_code=ErrorCode.RETRY_EXHAUSTED,
-                    details={"max_retries": max_retries, "last_error": str(last_exception)},
-                    recoverable=True
-                )
-            raise RuntimeError("retry_on_exception: Beklenmeyen durum")
+
+            from errors import ResilienceError, ErrorCode
+            raise ResilienceError(
+                message=f"Retry exhausted after {max_retries} attempts",
+                error_code=ErrorCode.RETRY_EXHAUSTED,
+                details={"max_retries": max_retries, "last_error": str(last_exception)},
+                recoverable=True
+            )
         return wrapper
     return decorator

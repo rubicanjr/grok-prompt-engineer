@@ -1,7 +1,6 @@
 """
 Unit Tests for CircuitBreaker
 """
-
 import unittest
 import time
 from circuit_breaker import CircuitBreaker, CircuitState
@@ -30,6 +29,8 @@ class TestCircuitBreaker(unittest.TestCase):
         self.assertEqual(breaker.state, CircuitState.OPEN)
 
     def test_rejects_calls_when_open(self):
+        from errors import ResilienceError
+
         breaker = CircuitBreaker(failure_threshold=1, recovery_timeout=10)
 
         def failing_func():
@@ -39,8 +40,8 @@ class TestCircuitBreaker(unittest.TestCase):
         with self.assertRaises(ValueError):
             breaker.call(failing_func)
 
-        # Should reject immediately
-        with self.assertRaises(RuntimeError) as context:
+        # Should reject immediately with ResilienceError
+        with self.assertRaises(ResilienceError) as context:
             breaker.call(lambda: "should not run")
 
         self.assertIn("Circuit Breaker is OPEN", str(context.exception))
@@ -65,7 +66,6 @@ class TestCircuitBreaker(unittest.TestCase):
 
     def test_closes_after_success_in_half_open(self):
         breaker = CircuitBreaker(failure_threshold=1, recovery_timeout=0.1)
-
         call_count = 0
 
         def sometimes_failing():

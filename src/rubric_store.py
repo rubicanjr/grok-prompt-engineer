@@ -31,6 +31,13 @@ class RubricStore:
     def update_rubric(self, turn: int, scores: Dict[str, int], note: str = "") -> bool:
         """Belirli bir turn için Rubric skorlarını günceller."""
         key = f"rubric_turn_{turn}"
+
+        # Duplicate kontrolü
+        existing = self.get_rubric_for_turn(turn)
+        if existing:
+            logger.warning(f"Turn {turn} zaten mevcut. Güncelleme yapılmadı.")
+            return False
+
         data = {
             "turn": turn,
             "scores": scores,
