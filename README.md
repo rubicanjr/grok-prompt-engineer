@@ -25,3 +25,5 @@ python -m venv .venv
 source .venv/bin/activate     # Windows için: .venv\Scripts\activate
 
 pip install -r requirements.txt
+
+<!-- Test commit for CI status check -->
