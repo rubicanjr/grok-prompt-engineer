@@ -1,79 +1,69 @@
-import time   # <-- Bunu ekle
-
 """
 Central Configuration & Structured Logging
-Versiyon: v1.1
+Versiyon: v1.2
 
-Amaç: Tüm scriptler için ortak konfigürasyon, logging standardı ve hata yönetimi
-(retry mekanizması) sağlamak.
-
-Bu modül, orchestrator.py, execution_engine.py ve monitor_and_alert.py ile
-tam uyumlu çalışacak şekilde tasarlanmıştır.
+Bu modül, tüm scriptler için ortak konfigürasyon, logging standardı
+ve hata yönetimi (retry mekanizması) sağlar.
 """
 
 import logging
-from pathlib import Path
-import logging
-from functools import wraps          # ← Bunu ekle (wraps hatası için)
+import time
+from functools import wraps
 from pathlib import Path
 
-# Proje kökünü bul (src klasörünün bir üstü)
+# === Dizin Tanımları ===
 BASE_DIR = Path(__file__).parent.parent
-
-# Artifact ve log klasörleri
 ARTIFACTS_DIR = BASE_DIR / "artifacts"
 LOGS_DIR = ARTIFACTS_DIR / "logs"
 
-# Klasörleri oluştur
+# Log klasörünü oluştur
 LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-# === Logging Configuration ===
+# === Logging Yapılandırması ===
 LOG_FORMAT = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
 DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
 
 def get_logger(name: str) -> logging.Logger:
     """
     Tüm scriptler için standart logger döndürür.
-    Handler'ların tekrar eklenmesini engeller.
+    Aynı logger'a tekrar handler eklenmesini engeller.
     """
     logger = logging.getLogger(name)
-    
-    # Handler zaten varsa tekrar ekleme
+
     if logger.handlers:
         return logger
-    
+
     logger.setLevel(logging.INFO)
-    
+
     # Console handler
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(logging.Formatter(LOG_FORMAT, DATE_FORMAT))
     logger.addHandler(console_handler)
-    
+
     # File handler
     file_handler = logging.FileHandler(LOGS_DIR / "system.log", encoding="utf-8")
     file_handler.setFormatter(logging.Formatter(LOG_FORMAT, DATE_FORMAT))
     logger.addHandler(file_handler)
-    
+
     return logger
 
-# === Rubric Thresholds ===
+
+# === Rubric Eşik Değerleri ===
 RUBRIC_LOW_THRESHOLD = 9.0
 RUBRIC_CRITICAL_THRESHOLD = 8.5
 
-# === Context Reset ===
+# === Context Reset Ayarları ===
 CONTEXT_RESET_TURN_THRESHOLD = 20
-
-# === Execution Engine Settings ===
-DEFAULT_MODEL = "grok"
 ENABLE_AUTO_CONTEXT_RESET = True
-ENABLE_AUTO_LOGGING = True
 
-# === Self-Evolving Settings ===
-SELF_EVOLVING_APPLY_MODE = "manual"   # "auto" veya "manual" (varsayılan: manual = approval required)
+# === Self-Evolving Ayarları ===
+SELF_EVOLVING_APPLY_MODE = "manual"  # "auto" veya "manual"
 
-# === Retry Configuration ===
+# === Retry Ayarları ===
 MAX_RETRIES = 3
-RETRY_DELAY_SECONDS = 1
+RETRY_DELAY_SECONDS = 1.0
+
 
 def retry_on_exception(
     max_retries: int = MAX_RETRIES,
@@ -81,6 +71,9 @@ def retry_on_exception(
     backoff: str = "fixed",
     base_delay: float = None
 ):
+    """
+    Fonksiyonları otomatik yeniden deneme (retry) ile saran dekoratör.
+    """
     if base_delay is None:
         base_delay = RETRY_DELAY_SECONDS
 
@@ -88,7 +81,7 @@ def retry_on_exception(
         @wraps(func)
         def wrapper(*args, **kwargs):
             last_exception = None
-            attempts = max_retries + 1   # max_retries=0 → sadece 1 deneme
+            attempts = max_retries + 1
 
             for attempt in range(attempts):
                 try:

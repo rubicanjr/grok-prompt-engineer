@@ -9,12 +9,11 @@ from pathlib import Path
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import os
 import re
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, Any, TypedDict
+from typing import Optional, Dict, Any
 
 from config import retry_on_exception, get_logger, SELF_EVOLVING_APPLY_MODE
 from pydantic import BaseModel, Field
@@ -25,7 +24,6 @@ ARTIFACTS_DIR = Path("/home/workdir/artifacts")
 RUBRIC_LOG = ARTIFACTS_DIR / "Rubric_Tracking_Log_v1.0.md"
 RUBRIC_STATE_FILE = ARTIFACTS_DIR / "rubric_state.json"
 LIVING_STATE = ARTIFACTS_DIR / "Living_Project_State.md"
-BACKUP_SCRIPT = ARTIFACTS_DIR / "backup_artifacts.sh"
 
 
 class RunResult(BaseModel):
@@ -71,42 +69,6 @@ def update_rubric(turn: int, scores: Dict[str, int], notes: str) -> bool:
         return False
 
 
-def perform_context_reset_if_needed(turn: int):
-    """
-    20+ turda Context Reset'i otomatik tetikler.
-    
-    ⚠️ DEPRECATED: Bu fonksiyon artık kullanılmamalıdır.
-    Lütfen ExecutionEngine._perform_context_reset_if_needed() veya ProjectStateStore kullanın.
-    """
-    import warnings
-    warnings.warn(
-        "perform_context_reset_if_needed() is deprecated. "
-        "Use ExecutionEngine._perform_context_reset_if_needed() or ProjectStateStore instead.",
-        DeprecationWarning,
-        stacklevel=2
-    )
-    engine = ExecutionEngine()
-    engine._perform_context_reset_if_needed(turn)
-
-
-def sync_state_and_backup() -> str:
-    """
-    State güncelle + backup tetikle.
-    
-    ⚠️ DEPRECATED: Bu fonksiyon artık kullanılmamalıdır.
-    Lütfen ExecutionEngine._sync_state_and_backup() veya ProjectStateStore kullanın.
-    """
-    import warnings
-    warnings.warn(
-        "sync_state_and_backup() is deprecated. "
-        "Use ExecutionEngine._sync_state_and_backup() or ProjectStateStore instead.",
-        DeprecationWarning,
-        stacklevel=2
-    )
-    engine = ExecutionEngine()
-    return engine._sync_state_and_backup()
-
-
 class ExecutionEngine:
 
     def __init__(self):
@@ -148,10 +110,7 @@ class ExecutionEngine:
         """Yürütme aşamasını çalıştırır ve özet bilgi döndürür."""
         start = time.time()
         try:
-            # Context Reset (doğrudan)
             self._perform_context_reset_if_needed(turn)
-
-            # Rubric güncelle
             self._update_rubric_for_turn(turn)
 
             return PhaseResult(
@@ -183,17 +142,6 @@ class ExecutionEngine:
 
         store.record_context_reset(turn)
         logger.info(f"Context Reset applied for Turn {turn}")
-
-    def _sync_state_and_backup(self, turn: int = None):
-        from state_manager import ProjectStateStore
-
-        if BACKUP_SCRIPT.exists():
-            os.system(f"bash {BACKUP_SCRIPT}")
-
-        store = ProjectStateStore(LIVING_STATE)
-        note = "Execution Engine Sync: Protokoller çalıştırıldı, Rubric güncellendi."
-        store.append_log(note)
-        return "State + Backup sync tamamlandı."
 
     def get_last_turn(self) -> Optional[int]:
         return self.last_turn
