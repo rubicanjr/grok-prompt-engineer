@@ -1,0 +1,2297 @@
+2026-07-16 11:20:33 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 11:20:33 | ERROR    | execution_engine | Execute error: expected an indented block after function definition on line 39 (state_manager.py, line 40)
+2026-07-16 11:22:37 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 11:22:37 | ERROR    | execution_engine | Execute error: expected an indented block after function definition on line 39 (state_manager.py, line 40)
+2026-07-16 11:24:17 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 11:24:17 | ERROR    | execution_engine | Execute error: expected an indented block after function definition on line 39 (state_manager.py, line 40)
+2026-07-16 14:23:55 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 14:23:55 | ERROR    | execution_engine | Execute error: expected an indented block after function definition on line 39 (state_manager.py, line 40)
+2026-07-16 14:26:15 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 14:26:15 | ERROR    | execution_engine | Execute error: invalid syntax (state_manager.py, line 104)
+2026-07-16 14:26:30 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 14:26:30 | ERROR    | execution_engine | Execute error: invalid syntax (state_manager.py, line 104)
+2026-07-16 14:30:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 100 ===
+2026-07-16 14:30:25 | INFO     | execution_engine | Context Reset applied for Turn 100
+2026-07-16 14:32:20 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:32:40 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:37:46 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:19 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:19 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.06s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.1s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:19 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:19 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.05s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:19 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:19 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.03s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:19 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:19 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:19 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:19 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:19 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 14:40:19 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.02s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 14:40:19 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 14:40:19 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:19 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:19 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 14:40:19 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:25 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:25 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.05s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:25 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:25 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.05s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:25 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:25 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:25 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:25 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.05s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 14:40:25 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 14:40:25 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 14:40:25 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 14:40:25 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 14:40:25 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 14:40:25 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:40:25 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 14:40:25 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 14:40:25 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 14:44:27 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:45:47 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:47:29 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:48:43 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 14:55:24 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:01:08 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:17:59 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:17:59 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:17:59 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:17:59 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:17:59 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:17:59 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:17:59 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:17:59 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:17:59 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:17:59 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.06s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:17:59 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 15:17:59 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 15:17:59 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:17:59 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 15:17:59 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:17:59 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:17:59 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.05s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:17:59 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 15:17:59 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:17:59 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:17:59 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:17:59 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:18:00 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:18:00 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.03s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:18:00 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:18:00 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:18:00 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:18:00 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:18:00 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:18:00 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:18:00 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:18:00 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:18:00 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:18:00 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:18:00 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:18:00 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:18:00 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:18:00 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:18:00 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:18:00 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:18:00 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:18:00 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:18:00 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:18:00 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:18:00 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-16 15:21:04 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-16 15:21:04 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:21:04 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:21:04 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:21:04 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.05s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:21:04 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:21:04 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:21:04 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:21:04 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:21:04 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:21:04 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 15:21:04 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 15:21:04 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:21:04 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:21:04 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:21:04 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-16 15:21:04 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-16 15:21:04 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:21:04 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:21:04 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:21:04 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:21:04 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:21:04 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 15:21:04 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:21:04 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:21:04 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:21:04 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:21:04 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:21:04 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:21:04 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:22:14 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:22:14 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.05s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:22:14 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:22:14 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:22:14 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:22:14 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:22:14 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:22:14 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:22:14 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:22:14 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:22:14 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:22:14 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:22:14 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:22:14 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:22:14 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:22:14 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:22:14 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:23:42 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:23:42 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:23:42 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:23:42 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 360)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:23:42 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:23:42 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 360 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 158, in run_automated
+    main()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 152, in main
+    engine.run()
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 80, in run
+    return self._perform_run(turn)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 86, in _perform_run
+    self._execute(turn)
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\execution_engine.py", line 113, in _execute
+    self._perform_context_reset_if_needed(turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Context Reset failed
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:23:42 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:23:42 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.04s | Başarı: False | Execution: failed | Monitoring: success
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | === Monitoring & Alerting v1.1 (Güçlendirilmiş) ===
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Monitoring başlatıldı
+2026-07-16 15:23:42 | WARNING  | monitor_and_alert | Son dönemde Fallback veya Context Reset olayı tespit edildi.
+2026-07-16 15:23:42 | INFO     | monitor_and_alert | Son 5 tur Rubric ortalaması: 0.00
+2026-07-16 15:23:42 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-16 15:23:42 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-16 15:23:42 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-16 15:23:42 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 15:23:42 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-16 15:23:42 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-16 15:23:42 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-16 16:59:17 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-16 16:59:17 | ERROR    | execution_engine | Execute error: invalid syntax (state_manager.py, line 1)
+2026-07-16 17:00:43 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:11:34 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:20:32 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:22:26 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:34:39 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:36:52 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:36:52 | ERROR    | execution_engine | Execute error: expected an indented block after function definition on line 66 (state_manager.py, line 67)
+2026-07-17 13:38:02 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:44:13 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:52:00 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 13:55:46 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 14:04:52 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 14:11:10 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 14:19:47 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 14:21:10 | WARNING  | execution_engine | Otomatik kurtarma başlatılıyor...
+2026-07-17 14:21:10 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 14:21:10 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 14:21:10 | INFO     | execution_engine | Otomatik kurtarma başarılı.
+2026-07-17 14:21:40 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:12:49 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:14:03 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:14:03 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:14:03 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:14:03 | INFO     | execution_engine | Yeni temiz state dosyası oluşturuldu.
+2026-07-17 15:14:03 | INFO     | execution_engine | === OTOMATİK KURTARMA BAŞARIYLA TAMAMLANDI ===
+2026-07-17 15:14:23 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: Simüle state corruption
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | RubricStore güncellenemedi: Rubric update failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-17 15:40:51 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State corrupted
+2026-07-17 15:40:51 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:40:51 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-17 15:40:51 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:40:51 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.07s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-17 15:40:51 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 15:40:51 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:40:51 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-17 15:40:51 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:40:51 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-17 15:40:51 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:40:51 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-17 15:40:51 | ERROR    | execution_engine | _perform_run hatası (Turn 1): Context Reset failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-17 15:40:51 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:40:51 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-17 15:40:51 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:40:51 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-17 15:40:51 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 100)
+2026-07-17 15:40:51 | INFO     | execution_engine | [AUTO] Forced turn override: 100
+2026-07-17 15:40:51 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 15:40:51 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:40:51 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:40:51 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:40:51 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:40:51 | INFO     | orchestrator | Turn 100 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:40:51 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:40:51 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:40:51 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:40:51 | INFO     | execution_engine | Yeni temiz state dosyası oluşturuldu.
+2026-07-17 15:40:51 | INFO     | execution_engine | === OTOMATİK KURTARMA BAŞARIYLA TAMAMLANDI ===
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: Simüle state corruption
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | RubricStore güncellenemedi: Rubric update failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-17 15:42:52 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State corrupted
+2026-07-17 15:42:52 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:42:52 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-17 15:42:52 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:42:52 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-17 15:42:52 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 15:42:52 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:42:52 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-17 15:42:52 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:42:52 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-17 15:42:52 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:42:52 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-17 15:42:52 | ERROR    | execution_engine | _perform_run hatası (Turn 1): Context Reset failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-17 15:42:52 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:42:52 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-17 15:42:52 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 15:42:52 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-17 15:42:52 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 100)
+2026-07-17 15:42:52 | INFO     | execution_engine | [AUTO] Forced turn override: 100
+2026-07-17 15:42:52 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 15:42:52 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 15:42:52 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 15:42:52 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 15:42:52 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 15:42:52 | INFO     | orchestrator | Turn 100 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 15:42:52 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 15:42:52 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 15:42:52 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 15:42:52 | INFO     | execution_engine | Yeni temiz state dosyası oluşturuldu.
+2026-07-17 15:42:52 | INFO     | execution_engine | === OTOMATİK KURTARMA BAŞARIYLA TAMAMLANDI ===
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: Simüle state corruption
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | RubricStore güncellenemedi: Rubric update failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-17 16:04:54 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State corrupted
+2026-07-17 16:04:54 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:04:54 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.01s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-17 16:04:54 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:04:54 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-17 16:04:54 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 16:04:54 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:04:54 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.01s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-17 16:04:54 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:04:54 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-17 16:04:54 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:04:54 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-17 16:04:54 | ERROR    | execution_engine | _perform_run hatası (Turn 1): Context Reset failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-17 16:04:54 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:04:54 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-17 16:04:54 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:04:54 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-17 16:04:54 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 100)
+2026-07-17 16:04:54 | INFO     | execution_engine | [AUTO] Forced turn override: 100
+2026-07-17 16:04:54 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 16:04:54 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:04:54 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:04:54 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:04:54 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:04:54 | INFO     | orchestrator | Turn 100 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:04:54 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:04:54 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:04:54 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:04:54 | INFO     | execution_engine | Yeni temiz state dosyası oluşturuldu.
+2026-07-17 16:04:54 | INFO     | execution_engine | === OTOMATİK KURTARMA BAŞARIYLA TAMAMLANDI ===
+2026-07-17 16:06:11 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:11 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:11 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | Yeni state oluşturulamadı: Simüle state corruption
+2026-07-17 16:06:11 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | RubricStore güncellenemedi: Rubric update failed
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 380)
+2026-07-17 16:06:11 | INFO     | execution_engine | [AUTO] Forced turn override: 380
+2026-07-17 16:06:11 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State corrupted
+2026-07-17 16:06:11 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:06:11 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:11 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:11 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 16:06:11 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:11 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:11 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:06:11 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:11 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:11 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | Yeni state oluşturulamadı: State corrupted
+2026-07-17 16:06:11 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:11 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:06:11 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn 380 otomasyonu tamamlandı | Süre: 0.04s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 350)
+2026-07-17 16:06:11 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:06:11 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn 350 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 330)
+2026-07-17 16:06:11 | INFO     | execution_engine | [AUTO] Forced turn override: 330
+2026-07-17 16:06:11 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 16:06:11 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:06:11 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:11 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:11 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:06:11 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:11 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:11 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:06:11 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:11 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:11 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:11 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:06:11 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:11 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:06:11 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:06:11 | INFO     | orchestrator | Turn 330 otomasyonu tamamlandı | Süre: 0.02s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 370)
+2026-07-17 16:06:12 | INFO     | execution_engine | [AUTO] Forced turn override: 370
+2026-07-17 16:06:12 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:06:12 | ERROR    | execution_engine | RubricStore güncellenemedi: RubricStore failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 370 otomasyonu tamamlandı | Süre: 0.01s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 340)
+2026-07-17 16:06:12 | INFO     | execution_engine | [AUTO] Forced turn override: 340
+2026-07-17 16:06:12 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:06:12 | ERROR    | execution_engine | Execute error: Context Reset failed
+2026-07-17 16:06:12 | ERROR    | execution_engine | _perform_run hatası (Turn 1): Context Reset failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 340 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 300)
+2026-07-17 16:06:12 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:06:12 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 300 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 310)
+2026-07-17 16:06:12 | ERROR    | orchestrator | Execution Engine hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 86, in run_turn_end_automation
+    run_automated(turn_override=turn)
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Execution failed
+2026-07-17 16:06:12 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 310 otomasyonu tamamlandı | Süre: 0.02s | Başarı: False | Execution: failed | Monitoring: failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 320)
+2026-07-17 16:06:12 | INFO     | execution_engine | [AUTO] Forced turn override: 320
+2026-07-17 16:06:12 | INFO     | execution_engine | === ExecutionEngine started | Turn 1 ===
+2026-07-17 16:06:12 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | ERROR    | orchestrator | Monitoring hatası oluştu
+Traceback (most recent call last):
+  File "C:\Users\rubic\OneDrive\Masaüstü\FINANSKODU\GROKPROJELER\grok-prompt-engineer\src\orchestrator.py", line 96, in run_turn_end_automation
+    run_monitoring()
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1124, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1128, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rubic\AppData\Local\Programs\Python\Python311\Lib\unittest\mock.py", line 1183, in _execute_mock_call
+    raise effect
+Exception: Monitoring down
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 320 otomasyonu tamamlandı | Süre: 0.0s | Başarı: False | Execution: success | Monitoring: failed
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn sonu otomasyonu başlatılıyor (Turn: 100)
+2026-07-17 16:06:12 | INFO     | execution_engine | [AUTO] Forced turn override: 100
+2026-07-17 16:06:12 | ERROR    | execution_engine | _perform_run hatası (Turn 1): State store down
+2026-07-17 16:06:12 | WARNING  | execution_engine | State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...
+2026-07-17 16:06:12 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:12 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:12 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:12 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:06:12 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:12 | INFO     | orchestrator | Execution Engine başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | WARNING  | monitor_and_alert | Otomatik kurtarma tetikleniyor. Sebep: State dosyası bulunamadı
+2026-07-17 16:06:12 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:12 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:12 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:12 | ERROR    | execution_engine | Yeni state oluşturulamadı: State store down
+2026-07-17 16:06:12 | INFO     | execution_engine | Yedek dosyadan geri yüklendi.
+2026-07-17 16:06:12 | WARNING  | monitor_and_alert | Otomatik kurtarma başarısız: Yedek dosyadan geri yüklendi
+2026-07-17 16:06:12 | INFO     | orchestrator | Monitoring başarıyla çalıştırıldı.
+2026-07-17 16:06:12 | INFO     | orchestrator | Turn 100 otomasyonu tamamlandı | Süre: 0.03s | Başarı: True | Execution: success | Monitoring: success
+2026-07-17 16:06:12 | WARNING  | execution_engine | === OTOMATİK KURTARMA BAŞLATILIYOR ===
+2026-07-17 16:06:12 | INFO     | execution_engine | State dosyası yedeklendi: artifacts\state.json.bak
+2026-07-17 16:06:12 | INFO     | execution_engine | Bozuk state dosyası silindi.
+2026-07-17 16:06:12 | INFO     | execution_engine | Yeni temiz state dosyası oluşturuldu.
+2026-07-17 16:06:12 | INFO     | execution_engine | === OTOMATİK KURTARMA BAŞARIYLA TAMAMLANDI ===

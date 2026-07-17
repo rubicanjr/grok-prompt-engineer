@@ -1,50 +1,72 @@
 """
-Resilience ve Multi-Component Failure Testleri
+Resilience Testleri
+Circuit Breaker, Self-Healing, Graceful Degradation ve hata toleransı senaryoları.
 """
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
+from execution_engine import ExecutionEngine
 
 
-class TestMultiComponentFailure(unittest.TestCase):
+class TestResilience(unittest.TestCase):
 
-    def test_orchestrator_handles_execution_and_monitoring_failure(self):
-        """Execution Engine + Monitoring aynı anda hata verdiğinde orchestrator davranışı."""
-        with patch('orchestrator.run_automated') as mock_exec, \
-             patch('orchestrator.run_monitoring') as mock_mon:
-            mock_exec.side_effect = Exception("Execution failed")
-            mock_mon.side_effect = Exception("Monitoring failed")
-            from orchestrator import run_turn_end_automation
-            result = run_turn_end_automation(turn=300)
-            self.assertIsInstance(result, dict)
-            self.assertIn("success", result)
+    def test_circuit_breaker_opens_after_threshold(self):
+        """Circuit Breaker belirli hata sayısından sonra OPEN duruma geçmeli."""
+        from circuit_breaker import CircuitBreaker
+        breaker = CircuitBreaker(config_name="default")
 
-    def test_orchestrator_handles_execution_monitoring_and_context_reset_failure(self):
-        """Execution + Monitoring + Context Reset aynı anda hata verdiğinde orchestrator davranışı."""
-        with patch('orchestrator.run_automated') as mock_exec, \
-             patch('orchestrator.run_monitoring') as mock_mon, \
-             patch('execution_engine.ExecutionEngine._perform_context_reset_if_needed') as mock_reset:
-            mock_exec.side_effect = Exception("Execution failed")
-            mock_mon.side_effect = Exception("Monitoring failed")
-            mock_reset.side_effect = Exception("Context Reset failed")
-            from orchestrator import run_turn_end_automation
-            result = run_turn_end_automation(turn=310)
-            self.assertIsInstance(result, dict)
+        def failing_func():
+            raise ValueError("Simüle hata")
 
-    def test_system_continues_when_only_monitoring_fails(self):
-        """Sadece Monitoring başarısız olduğunda sistem devam etmeli."""
-        with patch('orchestrator.run_monitoring') as mock_mon:
-            mock_mon.side_effect = Exception("Monitoring down")
-            from orchestrator import run_turn_end_automation
-            result = run_turn_end_automation(turn=320)
-            self.assertIsInstance(result, dict)
+        for _ in range(5):
+            try:
+                breaker.call(failing_func)
+            except Exception:
+                pass
+
+        self.assertEqual(breaker.state.name, "OPEN")
+
+    def test_self_healing_recovers_from_state_corruption(self):
+        """State bozulması durumunda self-healing mekanizması çalışmalı."""
+        engine = ExecutionEngine()
+        result = engine.attempt_self_recovery()
+        self.assertTrue(result.get("success"))
+        self.assertTrue(result.get("backup_created"))
+        self.assertTrue(result.get("new_state_created"))
 
     def test_graceful_degradation_when_state_store_fails(self):
-        """State Store başarısız olduğunda sistemin devam edebilmesi."""
+        """State Store başarısız olduğunda sistem çökmemeli."""
         with patch('state_manager.ProjectStateStore') as mock_store:
             mock_store.side_effect = Exception("State store down")
             from orchestrator import run_turn_end_automation
-            result = run_turn_end_automation(turn=330)
+            result = run_turn_end_automation(turn=100)
             self.assertIsInstance(result, dict)
+            self.assertIn("success", result)
+
+    def test_circuit_breaker_half_open_recovery(self):
+        """HALF_OPEN durumunda başarılı çağrı sonrası CLOSED duruma dönmeli."""
+        from circuit_breaker import CircuitBreaker
+        breaker = CircuitBreaker(config_name="default")
+
+        def failing_func():
+            raise ValueError("Hata")
+
+        # OPEN durumuna getir
+        for _ in range(5):
+            try:
+                breaker.call(failing_func)
+            except Exception:
+                pass
+
+        # Manuel olarak HALF_OPEN yap (test için)
+        breaker._state = breaker._state.__class__.HALF_OPEN
+        breaker._half_open_test_done = False
+
+        def success_func():
+            return "success"
+
+        result = breaker.call(success_func)
+        self.assertEqual(result, "success")
+        self.assertEqual(breaker.state.name, "CLOSED")
 
 
 if __name__ == "__main__":

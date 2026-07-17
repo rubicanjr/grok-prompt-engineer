@@ -1,16 +1,14 @@
-# === schedule-orchestrator.yml ===
-name: Daily Orchestrator Run
+name: Daily Orchestrator + Monitoring Run
 
 on:
   schedule:
-    # Her gün sabah 09:00’da çalıştır (UTC)
+    # Her gün sabah 09:00 UTC'de çalıştır
     - cron: '0 9 * * *'
-  workflow_dispatch:   # Manuel tetikleme için de açık bırakıyoruz
+  workflow_dispatch: # Manuel tetikleme için açık
 
 jobs:
-  run-orchestrator:
+  run-orchestrator-and-monitoring:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,12 +28,17 @@ jobs:
         run: |
           PYTHONPATH=src python src/orchestrator.py
 
-      - name: Upload logs
+      - name: Run Monitoring & Health Check
+        run: |
+          PYTHONPATH=src python -m src.monitor_and_alert
+
+      - name: Upload logs and monitoring results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: orchestrator-logs
+          name: daily-orchestrator-monitoring-logs
           path: |
             artifacts/logs/
             artifacts/alerts.log
             artifacts/Usage_Log.md
+            artifacts/state.json

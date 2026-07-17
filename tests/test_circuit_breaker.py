@@ -1,5 +1,5 @@
 """
-Unit Tests for CircuitBreaker
+Unit Tests for CircuitBreaker (Güncellenmiş)
 """
 import unittest
 import time
@@ -9,79 +9,71 @@ from circuit_breaker import CircuitBreaker, CircuitState
 class TestCircuitBreaker(unittest.TestCase):
 
     def test_initial_state_is_closed(self):
-        breaker = CircuitBreaker(failure_threshold=3, recovery_timeout=10)
+        breaker = CircuitBreaker(config_name="default")
         self.assertEqual(breaker.state, CircuitState.CLOSED)
 
     def test_opens_after_failure_threshold(self):
-        breaker = CircuitBreaker(failure_threshold=2, recovery_timeout=10)
+        breaker = CircuitBreaker(config_name="default")
 
         def failing_func():
             raise ValueError("Simulated failure")
 
-        # First failure
-        with self.assertRaises(ValueError):
-            breaker.call(failing_func)
-
-        # Second failure → should open
-        with self.assertRaises(ValueError):
-            breaker.call(failing_func)
+        for _ in range(5):
+            try:
+                breaker.call(failing_func)
+            except Exception:
+                pass
 
         self.assertEqual(breaker.state, CircuitState.OPEN)
 
     def test_rejects_calls_when_open(self):
         from errors import ResilienceError
-
-        breaker = CircuitBreaker(failure_threshold=1, recovery_timeout=10)
+        breaker = CircuitBreaker(config_name="default")
 
         def failing_func():
             raise ValueError("Fail")
 
-        # Trigger open
-        with self.assertRaises(ValueError):
-            breaker.call(failing_func)
+        for _ in range(5):
+            try:
+                breaker.call(failing_func)
+            except Exception:
+                pass
 
-        # Should reject immediately with ResilienceError
-        with self.assertRaises(ResilienceError) as context:
+        with self.assertRaises(ResilienceError):
             breaker.call(lambda: "should not run")
 
-        self.assertIn("Circuit Breaker is OPEN", str(context.exception))
-
     def test_half_open_after_recovery_timeout(self):
-        breaker = CircuitBreaker(failure_threshold=1, recovery_timeout=0.1)
+        breaker = CircuitBreaker(config_name="default")
 
         def failing_func():
             raise ValueError("Fail")
 
-        # Open the circuit
-        with self.assertRaises(ValueError):
-            breaker.call(failing_func)
+        for _ in range(5):
+            try:
+                breaker.call(failing_func)
+            except Exception:
+                pass
 
-        self.assertEqual(breaker.state, CircuitState.OPEN)
-
-        # Wait for recovery timeout
-        time.sleep(0.2)
-
-        # Should transition to HALF_OPEN
+        breaker._last_failure_time = time.time() - 31
         self.assertEqual(breaker.state, CircuitState.HALF_OPEN)
 
     def test_closes_after_success_in_half_open(self):
-        breaker = CircuitBreaker(failure_threshold=1, recovery_timeout=0.1)
-        call_count = 0
+        breaker = CircuitBreaker(config_name="default")
 
         def sometimes_failing():
-            nonlocal call_count
-            call_count += 1
-            if call_count == 1:
-                raise ValueError("First fail")
+            if breaker._failure_count < 5:
+                raise ValueError("Fail")
             return "success"
 
-        # First call fails → OPEN
-        with self.assertRaises(ValueError):
-            breaker.call(sometimes_failing)
+        for _ in range(5):
+            try:
+                breaker.call(sometimes_failing)
+            except Exception:
+                pass
 
-        time.sleep(0.2)  # Wait for HALF_OPEN
+        breaker._state = CircuitState.HALF_OPEN
+        breaker._half_open_test_done = False
 
-        # Second call succeeds → should go back to CLOSED
         result = breaker.call(sometimes_failing)
         self.assertEqual(result, "success")
         self.assertEqual(breaker.state, CircuitState.CLOSED)

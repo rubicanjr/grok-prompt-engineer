@@ -1,0 +1,33 @@
+{"level": "INFO", "message": "Motor sağlıklı çalışıyor", "component": "monitor_and_alert", "timestamp": "2026-07-17T14:10:58.579483", "details": {}}
+{"level": "ERROR", "message": "Monitoring sistemi hatası: Injected monitoring failure", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:40:51.635422", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "health_checker", "timestamp": "2026-07-17T15:40:51.715111", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:40:51.730900", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T15:40:51.816604", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:40:51.825057", "details": {}}
+{"level": "INFO", "message": "Motor sağlıklı çalışıyor", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:40:51.856785", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T15:40:51.923578", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:40:51.923578", "details": {}}
+{"level": "ERROR", "message": "Monitoring sistemi hatası: Injected monitoring failure", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:42:52.181692", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "health_checker", "timestamp": "2026-07-17T15:42:52.270594", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:42:52.279147", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T15:42:52.304369", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:42:52.304369", "details": {}}
+{"level": "INFO", "message": "Motor sağlıklı çalışıyor", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:42:52.358148", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T15:42:52.402534", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T15:42:52.402534", "details": {}}
+{"level": "ERROR", "message": "Monitoring sistemi hatası: Injected monitoring failure", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:04:54.633979", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "health_checker", "timestamp": "2026-07-17T16:04:54.740907", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:04:54.740907", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T16:04:54.772577", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:04:54.778984", "details": {}}
+{"level": "INFO", "message": "Motor sağlıklı çalışıyor", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:04:54.826307", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T16:04:54.867842", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:04:54.867842", "details": {}}
+{"level": "ERROR", "message": "Monitoring sistemi hatası: Injected monitoring failure", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:06:11.840088", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "health_checker", "timestamp": "2026-07-17T16:06:11.957526", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State corrupted", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:06:11.966694", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T16:06:11.991567", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:06:11.998438", "details": {}}
+{"level": "INFO", "message": "Motor sağlıklı çalışıyor", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:06:12.038480", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "health_checker", "timestamp": "2026-07-17T16:06:12.090707", "details": {}}
+{"level": "CRITICAL", "message": "Health check hatası: State store down", "component": "monitor_and_alert", "timestamp": "2026-07-17T16:06:12.097754", "details": {}}
