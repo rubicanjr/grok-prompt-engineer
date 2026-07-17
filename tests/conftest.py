@@ -3,7 +3,6 @@ Pytest Konfigürasyonu ve Ortak Fixture'lar
 Test izolasyonunu ve mimarisini güçlendirmek için kullanılır.
 """
 import pytest
-from pathlib import Path
 from unittest.mock import patch
 
 from state_manager import ProjectStateStore

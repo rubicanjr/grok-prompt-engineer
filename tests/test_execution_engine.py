@@ -8,12 +8,11 @@ from pathlib import Path
 import tempfile
 import shutil
 
-from execution_engine import update_rubric, get_current_turn
+from execution_engine import update_rubric
 
 # === Rubric Testleri (Tamamen Fixture ile İzole) ===
 
 def test_update_rubric_adds_new_turn(isolated_artifacts):
-    from execution_engine import update_rubric
 
     # Yüksek turn numarası kullan (get_current_turn sorununu bypass eder)
     new_turn = 9999
@@ -27,7 +26,6 @@ def test_update_rubric_adds_new_turn(isolated_artifacts):
 
 
 def test_update_rubric_prevents_duplicate(isolated_artifacts):
-    from execution_engine import update_rubric
 
     turn = 10000
     scores = {

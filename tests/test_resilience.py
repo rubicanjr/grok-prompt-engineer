@@ -3,7 +3,7 @@ Resilience Testleri
 Circuit Breaker, Self-Healing, Graceful Degradation ve hata toleransı senaryoları.
 """
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from execution_engine import ExecutionEngine
 
 

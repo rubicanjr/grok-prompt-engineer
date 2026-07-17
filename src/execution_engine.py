@@ -12,7 +12,7 @@ import time
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any
-from config import retry_on_exception, get_logger, SELF_EVOLVING_APPLY_MODE
+from config import retry_on_exception, get_logger
 from pydantic import BaseModel, Field
 
 logger = get_logger("execution_engine")
