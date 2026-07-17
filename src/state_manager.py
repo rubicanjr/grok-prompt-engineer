@@ -2,6 +2,7 @@
 State Management Katmanı
 Bu modül, dosya tabanlı state yönetimini soyutlar ve daha güvenli, test edilebilir hale getirir.
 """
+
 import json
 import shutil
 from pathlib import Path
@@ -40,14 +41,14 @@ class StateManager:
         try:
             temp_file = self.state_file.with_suffix(".tmp")
             temp_file.write_text(
-                json.dumps(data, indent=2, ensure_ascii=False),
-                encoding="utf-8"
+                json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
             )
             import os
+
             os.replace(temp_file, self.state_file)
             return True
         except Exception:
-            if 'temp_file' in locals() and temp_file.exists():
+            if "temp_file" in locals() and temp_file.exists():
                 temp_file.unlink()
             return False
 
@@ -78,25 +79,32 @@ class ProjectStateStore:
     def append_log(self, message: str) -> bool:
         try:
             from pathlib import Path as P
+
             log_file = P("artifacts/Living_Project_State.md")
             log_file.parent.mkdir(parents=True, exist_ok=True)
             with open(log_file, "a", encoding="utf-8") as f:
-                f.write(f"- {__import__('datetime').datetime.now().isoformat()} | {message}\n")
+                f.write(
+                    f"- {__import__('datetime').datetime.now().isoformat()} | {message}\n"
+                )
             return True
         except Exception:
             return False
 
     def record_context_reset(self, turn: int) -> bool:
         key = f"context_reset_turn_{turn}"
-        return self.manager.update(key, {
-            "applied_at": __import__("datetime").datetime.now().isoformat(),
-            "turn": turn
-        })
+        return self.manager.update(
+            key,
+            {
+                "applied_at": __import__("datetime").datetime.now().isoformat(),
+                "turn": turn,
+            },
+        )
 
     def get_context_reset_history(self) -> list:
         state = self.get_state()
         history = [
-            value for key, value in state.items()
+            value
+            for key, value in state.items()
             if key.startswith("context_reset_turn_") and isinstance(value, dict)
         ]
         history.sort(key=lambda x: x.get("turn", 0))

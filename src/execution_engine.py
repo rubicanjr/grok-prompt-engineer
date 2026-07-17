@@ -3,8 +3,10 @@
 Grok Prompt Engineer - Production-Grade Execution Engine
 Versiyon: v1.2
 """
+
 import sys
 from pathlib import Path
+
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 import re
@@ -50,13 +52,14 @@ def _get_default_rubric_scores() -> Dict[str, int]:
         "Bias": 10,
         "Token": 9,
         "Yapı": 10,
-        "Self-Evolving": 9
+        "Self-Evolving": 9,
     }
 
 
 @retry_on_exception(max_retries=3)
 def update_rubric(turn: int, scores: Dict[str, int], notes: str) -> bool:
     from rubric_store import RubricStore
+
     try:
         store = RubricStore(RUBRIC_STATE_FILE)
         return store.update_rubric(turn, scores, notes)
@@ -110,10 +113,14 @@ class ExecutionEngine:
             logger.error(f"_perform_run hatası (Turn {turn}): {e}")
 
             if "state" in str(e).lower() or "json" in str(e).lower():
-                logger.warning("State bozulması tespit edildi. Otomatik kurtarma başlatılıyor...")
+                logger.warning(
+                    "State bozulması tespit edildi. Otomatik kurtarma başlatılıyor..."
+                )
                 recovery_result = self.attempt_self_recovery()
                 if recovery_result.get("success"):
-                    logger.info("Kurtarma başarılı. Motor temiz state ile devam edecek.")
+                    logger.info(
+                        "Kurtarma başarılı. Motor temiz state ile devam edecek."
+                    )
 
         finally:
             duration = round(time.time() - start_time, 3)
@@ -129,7 +136,12 @@ class ExecutionEngine:
         start = time.time()
         try:
             logger.info(f"=== ExecutionEngine started | Turn {turn} ===")
-            return PhaseResult(phase="initialize", turn=turn, status="success", duration=round(time.time() - start, 3))
+            return PhaseResult(
+                phase="initialize",
+                turn=turn,
+                status="success",
+                duration=round(time.time() - start, 3),
+            )
         except Exception as e:
             logger.error(f"Initialize error: {e}")
             raise
@@ -143,7 +155,7 @@ class ExecutionEngine:
                 phase="execute",
                 turn=turn,
                 status="success",
-                duration=round(time.time() - start, 3)
+                duration=round(time.time() - start, 3),
             )
         except Exception as e:
             logger.error(f"Execute error: {e}")
@@ -153,6 +165,7 @@ class ExecutionEngine:
         def rubric_operation():
             scores = _get_default_rubric_scores()
             update_rubric(turn, scores, "Execution engine run")
+
         self.rubric_breaker.call(rubric_operation)
 
     def _perform_context_reset_if_needed(self, turn: int):
@@ -165,6 +178,7 @@ class ExecutionEngine:
 
         def context_reset_operation():
             from state_manager import ProjectStateStore
+
             store = ProjectStateStore()
             if store.get_state().get(f"context_reset_turn_{turn}"):
                 return
@@ -187,7 +201,7 @@ class ExecutionEngine:
             "backup_created": False,
             "state_cleaned": False,
             "new_state_created": False,
-            "message": ""
+            "message": "",
         }
 
         logger.warning("=== OTOMATİK KURTARMA BAŞLATILIYOR ===")
@@ -220,7 +234,7 @@ class ExecutionEngine:
                 new_state = {
                     "recovered_at": datetime.now().isoformat(),
                     "recovery_reason": "Otomatik kurtarma",
-                    "recovery_successful": True
+                    "recovery_successful": True,
                 }
                 store.set_state(new_state)
                 result["new_state_created"] = True
@@ -258,7 +272,7 @@ class ExecutionEngine:
             "last_run_turn": state.get("last_run_turn"),
             "last_run_time": state.get("last_run_time"),
             "circuit_breaker_state": "CLOSED",
-            "timestamp": datetime.now().isoformat()
+            "timestamp": datetime.now().isoformat(),
         }
 
         if not state.get("last_run_time"):
@@ -284,6 +298,7 @@ def run_automated(turn_override: Optional[int] = None):
 
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--auto", action="store_true")
     parser.add_argument("--turn", type=int, default=None)

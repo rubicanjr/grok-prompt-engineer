@@ -2,6 +2,7 @@
 Hata Enjeksiyon Testleri
 Pytest monkeypatch + exception injection ile kritik hata senaryolarını test eder.
 """
+
 import pytest
 from unittest.mock import patch
 
@@ -12,7 +13,7 @@ def test_state_corruption_during_run():
 
     engine = ExecutionEngine()
 
-    with patch('state_manager.ProjectStateStore.set_state') as mock_set:
+    with patch("state_manager.ProjectStateStore.set_state") as mock_set:
         mock_set.side_effect = Exception("Simüle state corruption")
         result = engine.attempt_self_recovery()
         # Kurtarma mekanizması devreye girmeli
@@ -44,18 +45,20 @@ def test_circuit_breaker_with_injected_failure(monkeypatch):
 
 def test_monitoring_with_injected_exception():
     """Monitoring sırasında exception enjekte edildiğinde sistemin çökmemesi."""
-    with patch('monitor_and_alert.HealthChecker.check_motor_health') as mock_health:
+    with patch("monitor_and_alert.HealthChecker.check_motor_health") as mock_health:
         mock_health.side_effect = Exception("Injected monitoring failure")
         from monitor_and_alert import run_monitoring
+
         result = run_monitoring()
         assert result.get("success") is False or "error" in result
 
 
 def test_rubric_update_failure_injection():
     """Rubric güncelleme sırasında hata enjekte edildiğinde motorun devam etmesi."""
-    with patch('rubric_store.RubricStore.update_rubric') as mock_update:
+    with patch("rubric_store.RubricStore.update_rubric") as mock_update:
         mock_update.side_effect = Exception("Rubric update failed")
         from execution_engine import ExecutionEngine
+
         engine = ExecutionEngine()
         # Hata fırlatmamalı, sadece loglamalı
         try:

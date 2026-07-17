@@ -17,6 +17,7 @@ logger = get_logger("monitor_and_alert")
 
 class AlertLevel(Enum):
     """Alert seviyeleri"""
+
     INFO = "INFO"
     WARNING = "WARNING"
     CRITICAL = "CRITICAL"
@@ -25,7 +26,14 @@ class AlertLevel(Enum):
 
 class Alert:
     """Tek bir alert kaydı"""
-    def __init__(self, level: AlertLevel, message: str, component: str = "system", details: Optional[Dict] = None):
+
+    def __init__(
+        self,
+        level: AlertLevel,
+        message: str,
+        component: str = "system",
+        details: Optional[Dict] = None,
+    ):
         self.level = level
         self.message = message
         self.component = component
@@ -38,7 +46,7 @@ class Alert:
             "message": self.message,
             "component": self.component,
             "timestamp": self.timestamp,
-            "details": self.details
+            "details": self.details,
         }
 
 
@@ -47,6 +55,7 @@ class AlertManager:
     Alert yönetim sistemi.
     Birden fazla kanal destekler. Hata toleransı yüksektir.
     """
+
     def __init__(self, log_file: Path = Path("artifacts/alerts.log")):
         self.log_file = log_file
         self.log_file.parent.mkdir(parents=True, exist_ok=True)
@@ -65,7 +74,9 @@ class AlertManager:
                 AlertLevel.CRITICAL: "\033[91m",
                 AlertLevel.ERROR: "\033[91m",
             }.get(alert.level, "\033[0m")
-            print(f"{color}[{alert.level.value}] {alert.component}: {alert.message}\033[0m")
+            print(
+                f"{color}[{alert.level.value}] {alert.component}: {alert.message}\033[0m"
+            )
         except Exception:
             pass
 
@@ -76,7 +87,13 @@ class AlertManager:
         except Exception:
             pass
 
-    def send_alert(self, level: AlertLevel, message: str, component: str = "system", details: Optional[Dict] = None):
+    def send_alert(
+        self,
+        level: AlertLevel,
+        message: str,
+        component: str = "system",
+        details: Optional[Dict] = None,
+    ):
         alert = Alert(level, message, component, details)
         for handler in self.handlers:
             try:
@@ -93,6 +110,7 @@ class HealthChecker:
     Motorun sağlık durumunu detaylı kontrol eder.
     Circuit Breaker, State ve Execution Engine entegrasyonu sağlar.
     """
+
     def __init__(self, state_file: Path = Path("artifacts/state.json")):
         self.state_file = state_file
 
@@ -102,7 +120,7 @@ class HealthChecker:
         health = {
             "status": "healthy",
             "timestamp": datetime.now().isoformat(),
-            "checks": {}
+            "checks": {},
         }
 
         try:
@@ -113,12 +131,12 @@ class HealthChecker:
                 "exists": self.state_file.exists(),
                 "last_run_turn": state.get("last_run_turn"),
                 "last_run_time": state.get("last_run_time"),
-                "recovered_at": state.get("recovered_at")
+                "recovered_at": state.get("recovered_at"),
             }
 
             health["checks"]["circuit_breaker"] = {
                 "status": "CLOSED",
-                "message": "Circuit Breaker aktif (tüm instance'lar)"
+                "message": "Circuit Breaker aktif (tüm instance'lar)",
             }
 
             last_run = state.get("last_run_time")
@@ -127,13 +145,13 @@ class HealthChecker:
                 minutes_ago = (datetime.now() - last_run_dt).total_seconds() / 60
                 health["checks"]["last_run"] = {
                     "minutes_ago": round(minutes_ago, 1),
-                    "status": "recent" if minutes_ago < 60 else "stale"
+                    "status": "recent" if minutes_ago < 60 else "stale",
                 }
 
             if state.get("recovered_at"):
                 health["checks"]["recovery"] = {
                     "recovered_at": state.get("recovered_at"),
-                    "recovery_reason": state.get("recovery_reason", "Bilinmiyor")
+                    "recovery_reason": state.get("recovery_reason", "Bilinmiyor"),
                 }
 
             if not self.state_file.exists():
@@ -154,19 +172,23 @@ class HealthChecker:
         alerts = []
 
         if health.get("status") == "error":
-            alerts.append(Alert(
-                AlertLevel.CRITICAL,
-                health.get("message", "Bilinmeyen kritik hata"),
-                component="health_checker"
-            ))
+            alerts.append(
+                Alert(
+                    AlertLevel.CRITICAL,
+                    health.get("message", "Bilinmeyen kritik hata"),
+                    component="health_checker",
+                )
+            )
 
         last_run_check = health.get("checks", {}).get("last_run", {})
         if last_run_check.get("status") == "stale":
-            alerts.append(Alert(
-                AlertLevel.WARNING,
-                f"Motor son {last_run_check.get('minutes_ago')} dakika önce çalıştı",
-                component="execution_engine"
-            ))
+            alerts.append(
+                Alert(
+                    AlertLevel.WARNING,
+                    f"Motor son {last_run_check.get('minutes_ago')} dakika önce çalıştı",
+                    component="execution_engine",
+                )
+            )
 
         return alerts
 
@@ -178,11 +200,7 @@ def trigger_auto_recovery_if_needed(health: Dict[str, Any]) -> Dict[str, Any]:
     """
     from execution_engine import ExecutionEngine
 
-    result = {
-        "triggered": False,
-        "success": False,
-        "reason": ""
-    }
+    result = {"triggered": False, "success": False, "reason": ""}
 
     should_recover = False
     reason = ""
@@ -209,7 +227,9 @@ def trigger_auto_recovery_if_needed(health: Dict[str, Any]) -> Dict[str, Any]:
                 logger.info("Otomatik kurtarma başarıyla tamamlandı.")
                 result["success"] = True
             else:
-                logger.warning(f"Otomatik kurtarma başarısız: {recovery_result.get('message')}")
+                logger.warning(
+                    f"Otomatik kurtarma başarısız: {recovery_result.get('message')}"
+                )
 
             return result
 
@@ -238,7 +258,7 @@ def run_monitoring() -> Dict[str, Any]:
                 level=alert.level,
                 message=alert.message,
                 component=alert.component,
-                details=alert.details
+                details=alert.details,
             )
 
         recovery_info = {}
@@ -249,32 +269,33 @@ def run_monitoring() -> Dict[str, Any]:
             alert_manager.send_alert(
                 AlertLevel.INFO,
                 "Motor sağlıklı çalışıyor",
-                component="monitor_and_alert"
+                component="monitor_and_alert",
             )
         else:
             alert_manager.send_alert(
-                AlertLevel.WARNING if health["status"] == "degraded" else AlertLevel.CRITICAL,
+                (
+                    AlertLevel.WARNING
+                    if health["status"] == "degraded"
+                    else AlertLevel.CRITICAL
+                ),
                 health.get("message", "Motor durumu bilinmiyor"),
-                component="monitor_and_alert"
+                component="monitor_and_alert",
             )
 
         return {
             "success": True,
             "health": health,
             "alerts_triggered": len(critical_alerts),
-            "auto_recovery": recovery_info
+            "auto_recovery": recovery_info,
         }
 
     except Exception as e:
         alert_manager.send_alert(
             AlertLevel.ERROR,
             f"Monitoring sistemi hatası: {str(e)}",
-            component="monitor_and_alert"
+            component="monitor_and_alert",
         )
-        return {
-            "success": False,
-            "error": str(e)
-        }
+        return {"success": False, "error": str(e)}
 
 
 if __name__ == "__main__":

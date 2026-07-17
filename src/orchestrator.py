@@ -16,6 +16,7 @@ Kullanım:
     from orchestrator import run_turn_end_automation
     result = run_turn_end_automation(turn=42)
 """
+
 import sys
 from pathlib import Path
 
@@ -30,6 +31,7 @@ from monitor_and_alert import run_monitoring
 from config import get_logger, retry_on_exception
 
 logger = get_logger("orchestrator")
+
 
 @retry_on_exception(max_retries=2)
 def run_turn_end_automation(turn: Optional[int] = None) -> Dict[str, Any]:
@@ -58,11 +60,14 @@ def run_turn_end_automation(turn: Optional[int] = None) -> Dict[str, Any]:
             - duration_seconds (float): Toplam çalışma süresi
     """
     import time
+
     start_time = time.time()
 
     # Basit precondition / health check
     if turn is not None and turn < 0:
-        logger.warning(f"Negatif turn değeri ({turn}) tespit edildi. None olarak ayarlandı.")
+        logger.warning(
+            f"Negatif turn değeri ({turn}) tespit edildi. None olarak ayarlandı."
+        )
         turn = None
 
     # Turn parametresi validasyonu
@@ -78,9 +83,9 @@ def run_turn_end_automation(turn: Optional[int] = None) -> Dict[str, Any]:
         "turn": turn,
         "execution_engine": "not_run",
         "monitoring": "not_run",
-        "duration_seconds": 0.0
+        "duration_seconds": 0.0,
     }
-    
+
     # 1. Execution Engine'i çalıştır
     try:
         run_automated(turn_override=turn)
@@ -114,10 +119,12 @@ def run_turn_end_automation(turn: Optional[int] = None) -> Dict[str, Any]:
 
     return result
 
+
 if __name__ == "__main__":
     import argparse
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--turn", type=int, default=None)
     args = parser.parse_args()
-    
+
     run_turn_end_automation(args.turn)

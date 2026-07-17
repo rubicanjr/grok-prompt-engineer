@@ -19,13 +19,14 @@ class CircuitState(Enum):
 
 class CircuitBreakerConfig:
     """Circuit Breaker için konfigürasyon sınıfı"""
+
     def __init__(
         self,
         failure_threshold: int = 5,
         recovery_timeout: float = 30.0,
         expected_exception: type = Exception,
         name: str = "default",
-        recovery_strategy: str = "normal"  # normal, aggressive, conservative
+        recovery_strategy: str = "normal",  # normal, aggressive, conservative
     ):
         self.failure_threshold = failure_threshold
         self.recovery_timeout = recovery_timeout
@@ -46,42 +47,41 @@ class CircuitBreaker:
             recovery_timeout=30.0,
             expected_exception=Exception,
             name="default",
-            recovery_strategy="normal"
+            recovery_strategy="normal",
         ),
         "state_error": CircuitBreakerConfig(
             failure_threshold=2,
             recovery_timeout=60.0,
             expected_exception=Exception,
             name="state_error",
-            recovery_strategy="conservative"  # State hatalarında daha temkinli
+            recovery_strategy="conservative",  # State hatalarında daha temkinli
         ),
         "rubric_update": CircuitBreakerConfig(
             failure_threshold=3,
             recovery_timeout=20.0,
             expected_exception=Exception,
             name="rubric_update",
-            recovery_strategy="normal"
+            recovery_strategy="normal",
         ),
         "context_reset": CircuitBreakerConfig(
             failure_threshold=4,
             recovery_timeout=15.0,
             expected_exception=Exception,
             name="context_reset",
-            recovery_strategy="aggressive"
-        )
+            recovery_strategy="aggressive",
+        ),
     }
 
     def __init__(
         self,
         config_name: str = "default",
-        custom_config: Optional[CircuitBreakerConfig] = None
+        custom_config: Optional[CircuitBreakerConfig] = None,
     ):
         if custom_config:
             self.config = custom_config
         else:
             self.config = self.DEFAULT_CONFIGS.get(
-                config_name,
-                self.DEFAULT_CONFIGS["default"]
+                config_name, self.DEFAULT_CONFIGS["default"]
             )
 
         self._state = CircuitState.CLOSED
@@ -104,25 +104,27 @@ class CircuitBreaker:
 
         if current_state == CircuitState.OPEN:
             from errors import ResilienceError, ErrorCode
+
             raise ResilienceError(
                 message=f"Circuit Breaker [{self._config_name}] is OPEN. İstek reddedildi.",
                 error_code=ErrorCode.CIRCUIT_BREAKER_OPEN,
                 details={
                     "state": current_state.value,
                     "config": self._config_name,
-                    "failure_count": self._failure_count
+                    "failure_count": self._failure_count,
                 },
-                recoverable=True
+                recoverable=True,
             )
 
         if current_state == CircuitState.HALF_OPEN:
             if self._half_open_test_done:
                 from errors import ResilienceError, ErrorCode
+
                 raise ResilienceError(
                     message=f"Circuit Breaker [{self._config_name}] is HALF_OPEN. Sadece 1 test çağrısına izin verilir.",
                     error_code=ErrorCode.CIRCUIT_BREAKER_OPEN,
                     details={"state": current_state.value},
-                    recoverable=True
+                    recoverable=True,
                 )
             self._half_open_test_done = True
 
@@ -138,7 +140,9 @@ class CircuitBreaker:
         if self._state == CircuitState.HALF_OPEN:
             self._state = CircuitState.CLOSED
             self._half_open_test_done = False
-            logger.info(f"Circuit Breaker [{self._config_name}] → CLOSED (recovery successful)")
+            logger.info(
+                f"Circuit Breaker [{self._config_name}] → CLOSED (recovery successful)"
+            )
         self._failure_count = 0
 
     def _on_failure(self):
@@ -148,7 +152,9 @@ class CircuitBreaker:
         if self._state == CircuitState.HALF_OPEN:
             self._state = CircuitState.OPEN
             self._half_open_test_done = False
-            logger.warning(f"Circuit Breaker [{self._config_name}] → OPEN (HALF_OPEN test failed)")
+            logger.warning(
+                f"Circuit Breaker [{self._config_name}] → OPEN (HALF_OPEN test failed)"
+            )
         elif self._failure_count >= self.config.failure_threshold:
             self._state = CircuitState.OPEN
             logger.warning(

@@ -1,6 +1,7 @@
 """
 Unit Tests for CircuitBreaker (Güncellenmiş)
 """
+
 import unittest
 import time
 from circuit_breaker import CircuitBreaker, CircuitState
@@ -28,6 +29,7 @@ class TestCircuitBreaker(unittest.TestCase):
 
     def test_rejects_calls_when_open(self):
         from errors import ResilienceError
+
         breaker = CircuitBreaker(config_name="default")
 
         def failing_func():

@@ -2,6 +2,7 @@
 Resilience Testleri
 Circuit Breaker, Self-Healing, Graceful Degradation ve hata toleransı senaryoları.
 """
+
 import unittest
 from unittest.mock import patch
 from execution_engine import ExecutionEngine
@@ -12,6 +13,7 @@ class TestResilience(unittest.TestCase):
     def test_circuit_breaker_opens_after_threshold(self):
         """Circuit Breaker belirli hata sayısından sonra OPEN duruma geçmeli."""
         from circuit_breaker import CircuitBreaker
+
         breaker = CircuitBreaker(config_name="default")
 
         def failing_func():
@@ -35,9 +37,10 @@ class TestResilience(unittest.TestCase):
 
     def test_graceful_degradation_when_state_store_fails(self):
         """State Store başarısız olduğunda sistem çökmemeli."""
-        with patch('state_manager.ProjectStateStore') as mock_store:
+        with patch("state_manager.ProjectStateStore") as mock_store:
             mock_store.side_effect = Exception("State store down")
             from orchestrator import run_turn_end_automation
+
             result = run_turn_end_automation(turn=100)
             self.assertIsInstance(result, dict)
             self.assertIn("success", result)
@@ -45,6 +48,7 @@ class TestResilience(unittest.TestCase):
     def test_circuit_breaker_half_open_recovery(self):
         """HALF_OPEN durumunda başarılı çağrı sonrası CLOSED duruma dönmeli."""
         from circuit_breaker import CircuitBreaker
+
         breaker = CircuitBreaker(config_name="default")
 
         def failing_func():
