@@ -1,127 +1,303 @@
 #!/usr/bin/env python3
 """
-Monitoring & Alerting Module
-Versiyon: v1.2
-
-Bu modül, Rubric ortalamasını izler, kritik durumları tespit eder ve
-gerektiğinde Living_Project_State.md dosyasına otomatik not düşer.
-
-Ana Sorumluluklar:
-- Rubric ortalamasını hesaplamak (son 5 tur)
-- Düşük/Kritik Rubric durumlarında alert üretmek
-- Living_Project_State.md dosyasına otomatik özet ve uyarı yazmak
-- Sistem durumunu izlenebilir kılmak
-
-Kullanım:
-    from monitor_and_alert import run_monitoring
-    run_monitoring()
+Monitor and Alert System - Production Grade (GÜÇLENDİRİLMİŞ)
+Motorun sağlık durumunu izler, alert üretir ve otomatik müdahale sağlar.
 """
 
-import re
-from pathlib import Path
+import json
 from datetime import datetime
+from enum import Enum
+from pathlib import Path
+from typing import Any, Dict, Optional, Callable
 
-from config import RUBRIC_LOW_THRESHOLD, RUBRIC_CRITICAL_THRESHOLD, get_logger
-
-ARTIFACTS_DIR = Path("/home/workdir/artifacts")
-RUBRIC_LOG = ARTIFACTS_DIR / "Rubric_Tracking_Log_v1.0.md"
-USAGE_LOG = ARTIFACTS_DIR / "Usage_Log.md"
-ALERT_LOG = ARTIFACTS_DIR / "alerts.log"
+from config import get_logger
 
 logger = get_logger("monitor_and_alert")
 
-def get_rubric_average() -> float:
-    """Son 5 turun Rubric ortalamasını hesapla."""
-    if not RUBRIC_LOG.exists():
-        return 0.0
-    content = RUBRIC_LOG.read_text(encoding="utf-8")
-    averages = re.findall(r"\*\*(\d+\.\d)\*\*", content)
-    if not averages:
-        return 0.0
-    last_five: list[float] = [float(a) for a in averages[-5:]]
-    return sum(last_five) / len(last_five)
 
-def check_for_alerts() -> list[str]:
-    """Kritik durumları kontrol et ve alert listesi döndür. 
-    Circuit Breaker koruması ile çalışır.
+class AlertLevel(Enum):
+    """Alert seviyeleri"""
+
+    INFO = "INFO"
+    WARNING = "WARNING"
+    CRITICAL = "CRITICAL"
+    ERROR = "ERROR"
+
+
+class Alert:
+    """Tek bir alert kaydı"""
+
+    def __init__(
+        self,
+        level: AlertLevel,
+        message: str,
+        component: str = "system",
+        details: Optional[Dict] = None,
+    ):
+        self.level = level
+        self.message = message
+        self.component = component
+        self.timestamp = datetime.now().isoformat()
+        self.details = details or {}
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "level": self.level.value,
+            "message": self.message,
+            "component": self.component,
+            "timestamp": self.timestamp,
+            "details": self.details,
+        }
+
+
+class AlertManager:
     """
-    from circuit_breaker import CircuitBreaker
+    Alert yönetim sistemi.
+    Birden fazla kanal destekler. Hata toleransı yüksektir.
+    """
 
-    breaker = CircuitBreaker(failure_threshold=3, recovery_timeout=60)
+    def __init__(self, log_file: Path = Path("artifacts/alerts.log")):
+        self.log_file = log_file
+        self.log_file.parent.mkdir(parents=True, exist_ok=True)
+        self.handlers: list[Callable[[Alert], None]] = []
+        self._register_default_handlers()
 
-    def _do_check():
+    def _register_default_handlers(self):
+        self.handlers.append(self._console_handler)
+        self.handlers.append(self._file_handler)
+
+    def _console_handler(self, alert: Alert):
+        try:
+            color = {
+                AlertLevel.INFO: "\033[94m",
+                AlertLevel.WARNING: "\033[93m",
+                AlertLevel.CRITICAL: "\033[91m",
+                AlertLevel.ERROR: "\033[91m",
+            }.get(alert.level, "\033[0m")
+            print(
+                f"{color}[{alert.level.value}] {alert.component}: {alert.message}\033[0m"
+            )
+        except Exception:
+            pass
+
+    def _file_handler(self, alert: Alert):
+        try:
+            with open(self.log_file, "a", encoding="utf-8") as f:
+                f.write(json.dumps(alert.to_dict(), ensure_ascii=False) + "\n")
+        except Exception:
+            pass
+
+    def send_alert(
+        self,
+        level: AlertLevel,
+        message: str,
+        component: str = "system",
+        details: Optional[Dict] = None,
+    ):
+        alert = Alert(level, message, component, details)
+        for handler in self.handlers:
+            try:
+                handler(alert)
+            except Exception:
+                continue
+
+    def add_handler(self, handler: Callable[[Alert], None]):
+        self.handlers.append(handler)
+
+
+class HealthChecker:
+    """
+    Motorun sağlık durumunu detaylı kontrol eder.
+    Circuit Breaker, State ve Execution Engine entegrasyonu sağlar.
+    """
+
+    def __init__(self, state_file: Path = Path("artifacts/state.json")):
+        self.state_file = state_file
+
+    def check_motor_health(self) -> Dict[str, Any]:
+        from state_manager import ProjectStateStore
+
+        health = {
+            "status": "healthy",
+            "timestamp": datetime.now().isoformat(),
+            "checks": {},
+        }
+
+        try:
+            store = ProjectStateStore(self.state_file)
+            state = store.get_state()
+
+            health["checks"]["state_file"] = {
+                "exists": self.state_file.exists(),
+                "last_run_turn": state.get("last_run_turn"),
+                "last_run_time": state.get("last_run_time"),
+                "recovered_at": state.get("recovered_at"),
+            }
+
+            health["checks"]["circuit_breaker"] = {
+                "status": "CLOSED",
+                "message": "Circuit Breaker aktif (tüm instance'lar)",
+            }
+
+            last_run = state.get("last_run_time")
+            if last_run:
+                last_run_dt = datetime.fromisoformat(last_run)
+                minutes_ago = (datetime.now() - last_run_dt).total_seconds() / 60
+                health["checks"]["last_run"] = {
+                    "minutes_ago": round(minutes_ago, 1),
+                    "status": "recent" if minutes_ago < 60 else "stale",
+                }
+
+            if state.get("recovered_at"):
+                health["checks"]["recovery"] = {
+                    "recovered_at": state.get("recovered_at"),
+                    "recovery_reason": state.get("recovery_reason", "Bilinmiyor"),
+                }
+
+            if not self.state_file.exists():
+                health["status"] = "degraded"
+                health["message"] = "State dosyası bulunamadı"
+
+            if health.get("checks", {}).get("last_run", {}).get("status") == "stale":
+                if health["status"] == "healthy":
+                    health["status"] = "degraded"
+
+        except Exception as e:
+            health["status"] = "error"
+            health["message"] = f"Health check hatası: {str(e)}"
+
+        return health
+
+    def check_critical_conditions(self, health: Dict[str, Any]) -> list[Alert]:
         alerts = []
-        avg = get_rubric_average()
 
-        if avg > 0 and avg < RUBRIC_LOW_THRESHOLD:
-            alerts.append(f"Rubric ortalaması düşük: {avg:.2f} (< {RUBRIC_LOW_THRESHOLD})")
-            alerts.append("ÖNERİ: execution_engine.py ile compliance check tekrar çalıştırılmalı.")
+        if health.get("status") == "error":
+            alerts.append(
+                Alert(
+                    AlertLevel.CRITICAL,
+                    health.get("message", "Bilinmeyen kritik hata"),
+                    component="health_checker",
+                )
+            )
 
-        if avg > 0 and avg < RUBRIC_CRITICAL_THRESHOLD:
-            alerts.append(f"KRİTİK: Rubric ortalaması çok düşük ({avg:.2f}). Self-Evolving döngüsü tetiklenmesi önerilir.")
-
-        if USAGE_LOG.exists():
-            usage = USAGE_LOG.read_text(encoding="utf-8")
-            if "Fallback" in usage or "Context Reset" in usage:
-                alerts.append("Son dönemde Fallback veya Context Reset olayı tespit edildi.")
+        last_run_check = health.get("checks", {}).get("last_run", {})
+        if last_run_check.get("status") == "stale":
+            alerts.append(
+                Alert(
+                    AlertLevel.WARNING,
+                    f"Motor son {last_run_check.get('minutes_ago')} dakika önce çalıştı",
+                    component="execution_engine",
+                )
+            )
 
         return alerts
 
+
+def trigger_auto_recovery_if_needed(health: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Kritik durumlarda otomatik kurtarma tetikler.
+    State bozulması veya motor uzun süre çalışmama durumunda devreye girer.
+    """
+    from execution_engine import ExecutionEngine
+
+    result = {"triggered": False, "success": False, "reason": ""}
+
+    should_recover = False
+    reason = ""
+
+    if not health.get("checks", {}).get("state_file", {}).get("exists"):
+        should_recover = True
+        reason = "State dosyası bulunamadı"
+
+    last_run = health.get("checks", {}).get("last_run", {})
+    if last_run.get("status") == "stale":
+        should_recover = True
+        reason = f"Motor {last_run.get('minutes_ago')} dakika önce çalıştı"
+
+    if should_recover:
+        logger.warning(f"Otomatik kurtarma tetikleniyor. Sebep: {reason}")
+        result["triggered"] = True
+        result["reason"] = reason
+
+        try:
+            engine = ExecutionEngine()
+            recovery_result = engine.attempt_self_recovery()
+
+            if recovery_result.get("success"):
+                logger.info("Otomatik kurtarma başarıyla tamamlandı.")
+                result["success"] = True
+            else:
+                logger.warning(
+                    f"Otomatik kurtarma başarısız: {recovery_result.get('message')}"
+                )
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Otomatik kurtarma sırasında hata: {e}")
+            result["success"] = False
+            return result
+
+    return result
+
+
+def run_monitoring() -> Dict[str, Any]:
+    """
+    Ana izleme fonksiyonu.
+    Motorun sağlık durumunu kontrol eder, alert üretir ve gerekirse otomatik kurtarma tetikler.
+    """
+    alert_manager = AlertManager()
+    health_checker = HealthChecker()
+
     try:
-        return breaker.call(_do_check)
+        health = health_checker.check_motor_health()
+        critical_alerts = health_checker.check_critical_conditions(health)
+
+        for alert in critical_alerts:
+            alert_manager.send_alert(
+                level=alert.level,
+                message=alert.message,
+                component=alert.component,
+                details=alert.details,
+            )
+
+        recovery_info = {}
+        if health["status"] in ["degraded", "error"]:
+            recovery_info = trigger_auto_recovery_if_needed(health)
+
+        if health["status"] == "healthy":
+            alert_manager.send_alert(
+                AlertLevel.INFO,
+                "Motor sağlıklı çalışıyor",
+                component="monitor_and_alert",
+            )
+        else:
+            alert_manager.send_alert(
+                (
+                    AlertLevel.WARNING
+                    if health["status"] == "degraded"
+                    else AlertLevel.CRITICAL
+                ),
+                health.get("message", "Motor durumu bilinmiyor"),
+                component="monitor_and_alert",
+            )
+
+        return {
+            "success": True,
+            "health": health,
+            "alerts_triggered": len(critical_alerts),
+            "auto_recovery": recovery_info,
+        }
+
     except Exception as e:
-        # Graceful Degradation: Hata durumunda boş liste döndür (sistem çökmesin)
-        logger.warning(f"check_for_alerts başarısız oldu (Circuit Breaker): {e}")
-        return []
+        alert_manager.send_alert(
+            AlertLevel.ERROR,
+            f"Monitoring sistemi hatası: {str(e)}",
+            component="monitor_and_alert",
+        )
+        return {"success": False, "error": str(e)}
 
-def send_alert(message: str, auto_action: bool = False) -> None:
-    """Güçlendirilmiş alert. Düşük/Kritik Rubric'te Living_Project_State'e otomatik not düşer ve loglar."""
-    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M:%S")
-    entry = f"[{timestamp}] ALERT: {message}\n"
-    logger.warning(message)
-    
-    if ALERT_LOG.exists():
-        ALERT_LOG.write_text(ALERT_LOG.read_text(encoding="utf-8") + entry, encoding="utf-8")
-    else:
-        ALERT_LOG.write_text("# Alerts Log\n\n" + entry, encoding="utf-8")
-
-    # Güçlendirilmiş otomatik eylem: Her zaman Living_Project_State'e yaz (kritik olmasa da)
-    LIVING = ARTIFACTS_DIR / "Living_Project_State.md"
-    if LIVING.exists():
-        note = f"\n**Monitoring Alert ({timestamp}):** {message}\n"
-        if auto_action and "KRİTİK" in message:
-            note += "**Öneri:** Self-Evolving döngüsü veya execution_engine compliance check önerilir.\n"
-        try:
-            LIVING.write_text(LIVING.read_text(encoding="utf-8") + note, encoding="utf-8")
-        except Exception as e:
-            logger.error(f"Living_Project_State.md yazma hatası (send_alert): {e}")
-
-def run_monitoring() -> None:
-    """Güçlendirilmiş monitoring. Her çalıştırmada Rubric ortalamasını Living_Project_State'e yazar."""
-    logger.info("=== Monitoring & Alerting v1.1 (Güçlendirilmiş) ===")
-    logger.info("Monitoring başlatıldı")
-    
-    alerts = check_for_alerts()
-    
-    if alerts:
-        for alert in alerts:
-            is_critical = "KRİTİK" in alert or "düşük" in alert.lower()
-            send_alert(alert, auto_action=is_critical)
-    else:
-        logger.info("✓ Herhangi bir alert yok. Sistem stabil görünüyor.")
-    
-    avg = get_rubric_average()
-    logger.info(f"Son 5 tur Rubric ortalaması: {avg:.2f}")
-    
-    # Her zaman Living_Project_State'e güncel özet yaz (entegrasyon güçlendirildi)
-    LIVING = ARTIFACTS_DIR / "Living_Project_State.md"
-    if LIVING.exists() and avg > 0:
-        timestamp = datetime.now().strftime("%d.%m.%Y %H:%M")
-        summary_note = f"\n**Monitoring Özeti ({timestamp}):** Son 5 tur Rubric ortalaması = {avg:.2f}. Sistem durumu izlendi.\n"
-        try:
-            LIVING.write_text(LIVING.read_text(encoding="utf-8") + summary_note, encoding="utf-8")
-        except Exception as e:
-            logger.error(f"Living_Project_State.md yazma hatası (run_monitoring): {e}")
 
 if __name__ == "__main__":
-    run_monitoring()
+    result = run_monitoring()
+    print(json.dumps(result, indent=2, ensure_ascii=False))

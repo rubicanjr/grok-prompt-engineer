@@ -10,6 +10,7 @@ from typing import Any, Dict, Optional
 
 class ErrorCode(str, Enum):
     """Merkezi hata kodları"""
+
     # Genel
     UNKNOWN_ERROR = "UNKNOWN_ERROR"
     CONFIGURATION_ERROR = "CONFIGURATION_ERROR"
@@ -43,7 +44,7 @@ class BaseAppError(Exception):
         message: str,
         error_code: ErrorCode = ErrorCode.UNKNOWN_ERROR,
         details: Optional[Dict[str, Any]] = None,
-        recoverable: bool = False
+        recoverable: bool = False,
     ):
         self.message = message
         self.error_code = error_code
@@ -59,7 +60,7 @@ class BaseAppError(Exception):
             "message": self.message,
             "details": self.details,
             "recoverable": self.recoverable,
-            "timestamp": self.timestamp
+            "timestamp": self.timestamp,
         }
 
     def __str__(self):
@@ -68,56 +69,85 @@ class BaseAppError(Exception):
 
 # === Özel Hata Sınıfları ===
 
+
 class ConfigurationError(BaseAppError):
     """Konfigürasyon ile ilgili hatalar"""
+
     def __init__(self, message: str, details: Optional[Dict[str, Any]] = None):
         super().__init__(
             message=message,
             error_code=ErrorCode.CONFIGURATION_ERROR,
             details=details,
-            recoverable=False
+            recoverable=False,
         )
 
 
 class ResilienceError(BaseAppError):
     """Resilience (Circuit Breaker, Retry, Timeout) ile ilgili hatalar"""
-    def __init__(self, message: str, error_code: ErrorCode = ErrorCode.RETRY_EXHAUSTED, details: Optional[Dict[str, Any]] = None, recoverable: bool = True):
+
+    def __init__(
+        self,
+        message: str,
+        error_code: ErrorCode = ErrorCode.RETRY_EXHAUSTED,
+        details: Optional[Dict[str, Any]] = None,
+        recoverable: bool = True,
+    ):
         super().__init__(
             message=message,
             error_code=error_code,
             details=details,
-            recoverable=recoverable
+            recoverable=recoverable,
         )
 
 
 class StateError(BaseAppError):
     """State yönetimi ile ilgili hatalar"""
-    def __init__(self, message: str, error_code: ErrorCode = ErrorCode.STATE_READ_ERROR, details: Optional[Dict[str, Any]] = None, recoverable: bool = False):
+
+    def __init__(
+        self,
+        message: str,
+        error_code: ErrorCode = ErrorCode.STATE_READ_ERROR,
+        details: Optional[Dict[str, Any]] = None,
+        recoverable: bool = False,
+    ):
         super().__init__(
             message=message,
             error_code=error_code,
             details=details,
-            recoverable=recoverable
+            recoverable=recoverable,
         )
 
 
 class LLMError(BaseAppError):
     """LLM Adapter ile ilgili hatalar"""
-    def __init__(self, message: str, details: Optional[Dict[str, Any]] = None, recoverable: bool = True):
+
+    def __init__(
+        self,
+        message: str,
+        details: Optional[Dict[str, Any]] = None,
+        recoverable: bool = True,
+    ):
         super().__init__(
             message=message,
             error_code=ErrorCode.LLM_CALL_FAILED,
             details=details,
-            recoverable=recoverable
+            recoverable=recoverable,
         )
 
 
 class ExecutionError(BaseAppError):
     """Execution Engine ile ilgili hatalar"""
-    def __init__(self, message: str, error_code: ErrorCode = ErrorCode.EXECUTION_FAILED, details: Optional[Dict[str, Any]] = None, recoverable: bool = False):
+
+    def __init__(
+        self,
+        message: str,
+        error_code: ErrorCode = ErrorCode.EXECUTION_FAILED,
+        details: Optional[Dict[str, Any]] = None,
+        recoverable: bool = False,
+    ):
         super().__init__(
             message=message,
             error_code=error_code,
             details=details,
-            recoverable=recoverable
+            recoverable=recoverable,
         )

@@ -42,7 +42,7 @@ class RubricStore:
             "turn": turn,
             "scores": scores,
             "note": note,
-            "updated_at": datetime.now().isoformat()
+            "updated_at": datetime.now().isoformat(),
         }
         return self.manager.update(key, data)
 

@@ -69,7 +69,7 @@ def retry_on_exception(
     max_retries: int = MAX_RETRIES,
     log_retries: bool = False,
     backoff: str = "fixed",
-    base_delay: float = None
+    base_delay: float = None,
 ):
     """
     Fonksiyonları otomatik yeniden deneme (retry) ile saran dekoratör.
@@ -90,11 +90,13 @@ def retry_on_exception(
                     last_exception = e
                     if log_retries and attempt < attempts - 1:
                         logger = logging.getLogger(func.__module__)
-                        logger.warning(f"Retry {attempt + 1}/{attempts} for {func.__name__}: {e}")
+                        logger.warning(
+                            f"Retry {attempt + 1}/{attempts} for {func.__name__}: {e}"
+                        )
 
                     if attempt < attempts - 1:
                         if backoff == "exponential":
-                            delay = base_delay * (2 ** attempt)
+                            delay = base_delay * (2**attempt)
                         elif backoff == "linear":
                             delay = base_delay * (attempt + 1)
                         else:
@@ -102,11 +104,14 @@ def retry_on_exception(
                         time.sleep(delay)
 
             from errors import ResilienceError, ErrorCode
+
             raise ResilienceError(
                 message=f"Retry exhausted after {max_retries} attempts",
                 error_code=ErrorCode.RETRY_EXHAUSTED,
                 details={"max_retries": max_retries, "last_error": str(last_exception)},
-                recoverable=True
+                recoverable=True,
             )
+
         return wrapper
+
     return decorator
