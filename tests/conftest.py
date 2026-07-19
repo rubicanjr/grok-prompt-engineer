@@ -2,8 +2,8 @@
 Pytest Konfigürasyonu ve Ortak Fixture'lar
 Test izolasyonunu ve mimarisini güçlendirmek için kullanılır.
 """
+
 import pytest
-from pathlib import Path
 from unittest.mock import patch
 
 from state_manager import ProjectStateStore
@@ -18,6 +18,7 @@ def pytest_configure(config):
 
 
 # === Geçici Dosya Fixture'ları ===
+
 
 @pytest.fixture
 def temp_state_file(tmp_path):
@@ -45,6 +46,7 @@ def rubric_store(temp_rubric_file):
 
 # === Mock Fixture'ları ===
 
+
 @pytest.fixture
 def mock_orchestrator():
     """orchestrator modülünü mock'lar."""
@@ -65,7 +67,7 @@ def isolated_artifacts(monkeypatch, tmp_path):
     """
     execution_engine.ARTIFACTS_DIR, RUBRIC_STATE_FILE ve RUBRIC_LOG
     değerlerini test başına tamamen izole eder.
-    
+
     Bu sayede testler global artifacts/ klasörüne yazmaz ve
     birbirlerini etkilemez.
     """
@@ -80,14 +82,10 @@ def isolated_artifacts(monkeypatch, tmp_path):
 
     # RUBRIC_STATE_FILE ve RUBRIC_LOG'u da güncelle
     monkeypatch.setattr(
-        execution_engine, 
-        "RUBRIC_STATE_FILE", 
-        fake_artifacts / "rubric_state.json"
+        execution_engine, "RUBRIC_STATE_FILE", fake_artifacts / "rubric_state.json"
     )
     monkeypatch.setattr(
-        execution_engine, 
-        "RUBRIC_LOG", 
-        fake_artifacts / "Rubric_Tracking_Log_v1.0.md"
+        execution_engine, "RUBRIC_LOG", fake_artifacts / "Rubric_Tracking_Log_v1.0.md"
     )
 
     return fake_artifacts

@@ -10,7 +10,7 @@ from errors import (
     StateError,
     LLMError,
     ExecutionError,
-    ErrorCode
+    ErrorCode,
 )
 
 
@@ -21,7 +21,7 @@ class TestStructuredErrors(unittest.TestCase):
             message="Something went wrong",
             error_code=ErrorCode.UNKNOWN_ERROR,
             details={"key": "value"},
-            recoverable=True
+            recoverable=True,
         )
         self.assertEqual(error.message, "Something went wrong")
         self.assertEqual(error.error_code, ErrorCode.UNKNOWN_ERROR)
@@ -33,7 +33,7 @@ class TestStructuredErrors(unittest.TestCase):
             message="Test error",
             error_code=ErrorCode.CONFIGURATION_ERROR,
             details={"config_key": "timeout"},
-            recoverable=False
+            recoverable=False,
         )
         data = error.to_dict()
         self.assertEqual(data["error_code"], "CONFIGURATION_ERROR")
@@ -49,7 +49,7 @@ class TestStructuredErrors(unittest.TestCase):
         error = ResilienceError(
             message="Retry limit reached",
             error_code=ErrorCode.RETRY_EXHAUSTED,
-            recoverable=True
+            recoverable=True,
         )
         self.assertEqual(error.error_code, ErrorCode.RETRY_EXHAUSTED)
         self.assertTrue(error.recoverable)
@@ -58,7 +58,7 @@ class TestStructuredErrors(unittest.TestCase):
         error = StateError(
             message="State file corrupted",
             error_code=ErrorCode.STATE_CORRUPTED,
-            recoverable=False
+            recoverable=False,
         )
         self.assertEqual(error.error_code, ErrorCode.STATE_CORRUPTED)
         self.assertFalse(error.recoverable)
