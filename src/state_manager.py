@@ -1,26 +1,30 @@
 """
 State Management Katmanı
-Bu modül, dosya tabanlı state yönetimini soyutlar ve daha güvenli, test edilebilir hale getirir.
+JSON tabanlı state yönetimi + Markdown log ayrımı.
 """
 
 import json
+import os
 import shutil
+from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, List, Optional
 
 
 class StateManager:
     """
-    State yönetimi için temel soyutlama katmanı.
-    JSON tabanlı state dosyalarını güvenli şekilde okur ve yazar.
+    Güvenli JSON state yönetimi.
+    - Atomic write
+    - Otomatik backup
+    - Bozulma durumunda otomatik sıfırlama
     """
 
     def __init__(self, state_file: Path):
-        self.state_file = state_file
-        self.backup_file = state_file.with_suffix(".bak.json")
+        self.state_file = Path(state_file)
+        self.backup_file = self.state_file.with_suffix(self.state_file.suffix + ".bak")
         self._ensure_file_exists()
 
-    def _ensure_file_exists(self):
+    def _ensure_file_exists(self) -> None:
         if not self.state_file.exists():
             self.state_file.parent.mkdir(parents=True, exist_ok=True)
             self.state_file.write_text("{}", encoding="utf-8")
@@ -31,9 +35,13 @@ class StateManager:
             if not content:
                 return {}
             return json.loads(content)
-        except (json.JSONDecodeError, Exception):
+        except (json.JSONDecodeError, OSError):
+            # Bozulduysa yedek al ve sıfırla
             if self.state_file.exists():
-                shutil.copy2(self.state_file, self.backup_file)
+                try:
+                    shutil.copy2(self.state_file, self.backup_file)
+                except Exception:
+                    pass
             self.state_file.write_text("{}", encoding="utf-8")
             return {}
 
@@ -41,15 +49,17 @@ class StateManager:
         try:
             temp_file = self.state_file.with_suffix(".tmp")
             temp_file.write_text(
-                json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8"
+                json.dumps(data, indent=2, ensure_ascii=False),
+                encoding="utf-8",
             )
-            import os
-
             os.replace(temp_file, self.state_file)
             return True
         except Exception:
             if "temp_file" in locals() and temp_file.exists():
-                temp_file.unlink()
+                try:
+                    temp_file.unlink()
+                except Exception:
+                    pass
             return False
 
     def update(self, key: str, value: Any) -> bool:
@@ -60,12 +70,12 @@ class StateManager:
 
 class ProjectStateStore:
     """
-    Proje genel state yönetimi.
-    state.json dosyası üzerinden çalışır.
-    Living_Project_State.md ise sadece log için kullanılır.
+    Proje state yönetimi.
+    - State → artifacts/state.json (JSON)
+    - Log → artifacts/Living_Project_State.md (Markdown, append-only)
     """
 
-    def __init__(self, state_file: Path = None):
+    def __init__(self, state_file: Optional[Path] = None):
         if state_file is None:
             state_file = Path("artifacts/state.json")
         self.manager = StateManager(state_file)
@@ -77,15 +87,13 @@ class ProjectStateStore:
         return self.manager.write(data)
 
     def append_log(self, message: str) -> bool:
+        """Sadece insan okunabilir Markdown log'a yazar."""
         try:
-            from pathlib import Path as P
-
-            log_file = P("artifacts/Living_Project_State.md")
+            log_file = Path("artifacts/Living_Project_State.md")
             log_file.parent.mkdir(parents=True, exist_ok=True)
+            timestamp = datetime.now().isoformat()
             with open(log_file, "a", encoding="utf-8") as f:
-                f.write(
-                    f"- {__import__('datetime').datetime.now().isoformat()} | {message}\n"
-                )
+                f.write(f"- {timestamp} | {message}\n")
             return True
         except Exception:
             return False
@@ -95,12 +103,12 @@ class ProjectStateStore:
         return self.manager.update(
             key,
             {
-                "applied_at": __import__("datetime").datetime.now().isoformat(),
+                "applied_at": datetime.now().isoformat(),
                 "turn": turn,
             },
         )
 
-    def get_context_reset_history(self) -> list:
+    def get_context_reset_history(self) -> List[Dict[str, Any]]:
         state = self.get_state()
         history = [
             value
@@ -109,13 +117,3 @@ class ProjectStateStore:
         ]
         history.sort(key=lambda x: x.get("turn", 0))
         return history
-
-    def clear_old_logs(self, keep_last: int = 50) -> bool:
-        state = self.get_state()
-        if "logs" not in state:
-            return True
-        logs = state["logs"]
-        if len(logs) > keep_last:
-            state["logs"] = logs[-keep_last:]
-            return self.set_state(state)
-        return True
