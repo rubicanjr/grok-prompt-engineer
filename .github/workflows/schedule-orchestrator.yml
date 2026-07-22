@@ -2,9 +2,8 @@ name: Daily Orchestrator + Monitoring Run
 
 on:
   schedule:
-    # Her gün sabah 09:00 UTC'de çalıştır
     - cron: '0 9 * * *'
-  workflow_dispatch: # Manuel tetikleme için açık
+  workflow_dispatch:
 
 jobs:
   run-orchestrator-and-monitoring:
@@ -28,10 +27,9 @@ jobs:
         run: |
           PYTHONPATH=src python src/orchestrator.py
 
-      - name: Run Monitoring & Health Check
+      - name: Run Monitoring and Health Check
         run: |
-          # Yeni (daha güvenli)
-	  PYTHONPATH=src python src/monitor_and_alert.py
+          PYTHONPATH=src python src/monitor_and_alert.py
 
       - name: Upload logs and monitoring results
         uses: actions/upload-artifact@v4
