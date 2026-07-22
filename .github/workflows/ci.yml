@@ -36,11 +36,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          PYTHONPATH=src pytest tests/ \
-            -v --tb=short \
-            --cov=src \
-            --cov-report=xml \
-            --cov-fail-under=70
+        PYTHONPATH=src pytest tests/ -v --tb=short --cov=src --cov-report=xml --cov-fail-under=80
 
       - name: Run Execution Engine (dry-run)
         run: |
