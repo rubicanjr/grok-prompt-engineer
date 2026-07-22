@@ -42,6 +42,7 @@ class TestStateManager(unittest.TestCase):
         result = store.append_log("Test log message")
         self.assertTrue(result)
 
+
 class TestRubricStore(unittest.TestCase):
     def setUp(self):
         self.temp_dir = tempfile.TemporaryDirectory()
@@ -52,6 +53,7 @@ class TestRubricStore(unittest.TestCase):
 
     def test_update_and_get_rubric(self):
         from rubric_store import RubricStore
+
         store = RubricStore(self.test_file)
         scores = {"Grounding": 10, "Hallucination": 9}
         self.assertTrue(store.update_rubric(1, scores, "test note"))
@@ -61,6 +63,7 @@ class TestRubricStore(unittest.TestCase):
 
     def test_duplicate_rubric_returns_false(self):
         from rubric_store import RubricStore
+
         store = RubricStore(self.test_file)
         scores = {"Grounding": 10}
         self.assertTrue(store.update_rubric(5, scores, "first"))
@@ -68,6 +71,7 @@ class TestRubricStore(unittest.TestCase):
 
     def test_get_latest_and_all_rubrics(self):
         from rubric_store import RubricStore
+
         store = RubricStore(self.test_file)
         store.update_rubric(1, {"Grounding": 8}, "t1")
         store.update_rubric(2, {"Grounding": 9}, "t2")
