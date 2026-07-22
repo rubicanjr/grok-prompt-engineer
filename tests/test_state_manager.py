@@ -43,5 +43,43 @@ class TestStateManager(unittest.TestCase):
         self.assertTrue(result)
 
 
+class TestRubricStore(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.test_file = Path(self.temp_dir.name) / "test_rubric.json"
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_update_and_get_rubric(self):
+        from rubric_store import RubricStore
+
+        store = RubricStore(self.test_file)
+        scores = {"Grounding": 10, "Hallucination": 9}
+        self.assertTrue(store.update_rubric(1, scores, "test note"))
+        data = store.get_rubric_for_turn(1)
+        self.assertEqual(data.get("turn"), 1)
+        self.assertEqual(data.get("scores"), scores)
+
+    def test_duplicate_rubric_returns_false(self):
+        from rubric_store import RubricStore
+
+        store = RubricStore(self.test_file)
+        scores = {"Grounding": 10}
+        self.assertTrue(store.update_rubric(5, scores, "first"))
+        self.assertFalse(store.update_rubric(5, scores, "duplicate"))
+
+    def test_get_latest_and_all_rubrics(self):
+        from rubric_store import RubricStore
+
+        store = RubricStore(self.test_file)
+        store.update_rubric(1, {"Grounding": 8}, "t1")
+        store.update_rubric(2, {"Grounding": 9}, "t2")
+        latest = store.get_latest_rubric()
+        self.assertEqual(latest.get("turn"), 2)
+        all_rubrics = store.get_all_rubrics()
+        self.assertEqual(len(all_rubrics), 2)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
