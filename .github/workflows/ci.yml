@@ -9,7 +9,6 @@ on:
 jobs:
   test-and-quality:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -36,15 +35,11 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          PYTHONPATH=src pytest tests/ \
-            -v --tb=short \
-            --cov=src \
-            --cov-report=xml \
-            --cov-fail-under=70
+          PYTHONPATH=src pytest tests/ -v --tb=short --cov=src --cov-report=xml --cov-fail-under=80
 
       - name: Run Execution Engine (dry-run)
         run: |
-          PYTHONPATH=src python -m src.execution_engine --auto || echo "Execution Engine çalıştırılamadı (göz ardı edildi)"
+          PYTHONPATH=src python src/execution_engine.py --auto || echo "Execution Engine skipped"
 
       - name: Upload test results and coverage
         uses: actions/upload-artifact@v5
