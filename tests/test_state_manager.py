@@ -1,10 +1,11 @@
 """
-Unit Tests for StateManager ve ProjectStateStore
+Unit Tests for StateManager, ProjectStateStore ve RubricStore
 """
 
 import unittest
 import tempfile
 from pathlib import Path
+
 from state_manager import StateManager, ProjectStateStore
 
 
@@ -41,6 +42,35 @@ class TestStateManager(unittest.TestCase):
         store = ProjectStateStore(self.test_file)
         result = store.append_log("Test log message")
         self.assertTrue(result)
+
+
+class TestStateManagerResilience(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.test_file = Path(self.temp_dir.name) / "resilience_state.json"
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_read_recovers_from_garbage(self):
+        self.test_file.write_text("not-json {{{", encoding="utf-8")
+        manager = StateManager(self.test_file)
+        self.assertEqual(manager.read(), {})
+
+    def test_write_then_update_roundtrip(self):
+        manager = StateManager(self.test_file)
+        self.assertTrue(manager.write({"a": 1}))
+        self.assertTrue(manager.update("b", 2))
+        data = manager.read()
+        self.assertEqual(data.get("a"), 1)
+        self.assertEqual(data.get("b"), 2)
+
+    def test_backup_created_on_corruption(self):
+        self.test_file.write_text("{bad", encoding="utf-8")
+        manager = StateManager(self.test_file)
+        result = manager.read()
+        self.assertIsInstance(result, dict)
+        self.assertEqual(result, {})
 
 
 class TestRubricStore(unittest.TestCase):
