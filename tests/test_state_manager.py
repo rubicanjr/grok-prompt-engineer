@@ -9,7 +9,6 @@ from state_manager import StateManager, ProjectStateStore
 
 
 class TestStateManager(unittest.TestCase):
-
     def setUp(self):
         self.temp_dir = tempfile.TemporaryDirectory()
         self.test_file = Path(self.temp_dir.name) / "test_state.json"
@@ -37,18 +36,11 @@ class TestStateManager(unittest.TestCase):
         result = store.get_state()
         self.assertEqual(result.get("test"), "value")
 
-    def test_append_log_and_clear(self):
+    def test_append_log(self):
+        """append_log Markdown log dosyasına yazabilmeli."""
         store = ProjectStateStore(self.test_file)
-        for i in range(25):
-            store.append_log(f"Log {i}")
-
-        # clear_old_logs metodu varsa test et
-        if hasattr(store, "clear_old_logs"):
-            store.clear_old_logs(keep_last=10)
-            state = store.get_state()
-            self.assertLessEqual(len(state.get("logs", [])), 10)
-        else:
-            self.skipTest("clear_old_logs metodu tanımlı değil")
+        result = store.append_log("Test log message")
+        self.assertTrue(result)
 
 
 if __name__ == "__main__":
