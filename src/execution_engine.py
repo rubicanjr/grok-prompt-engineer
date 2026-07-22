@@ -21,7 +21,6 @@ logger = get_logger("execution_engine")
 ARTIFACTS_DIR = Path(__file__).resolve().parent.parent / "artifacts"
 RUBRIC_LOG = ARTIFACTS_DIR / "Rubric_Tracking_Log_v1.0.md"
 RUBRIC_STATE_FILE = ARTIFACTS_DIR / "rubric_state.json"
-LIVING_STATE = ARTIFACTS_DIR / "Living_Project_State.md"
 
 
 class RunResult(BaseModel):
