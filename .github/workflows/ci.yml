@@ -25,6 +25,11 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov ruff black
 
+      - name: Security audit (pip-audit)
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt || true
+
       - name: Lint with Ruff
         run: |
           ruff check src/ tests/
