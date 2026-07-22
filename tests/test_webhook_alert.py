@@ -1,4 +1,5 @@
 """Webhook alert channel unit tests (mocked)."""
+
 import os
 from unittest.mock import patch, MagicMock
 from monitor_and_alert import AlertManager, AlertLevel
