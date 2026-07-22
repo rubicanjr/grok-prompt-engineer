@@ -68,10 +68,9 @@ class TestStateManagerResilience(unittest.TestCase):
     def test_backup_created_on_corruption(self):
         self.test_file.write_text("{bad", encoding="utf-8")
         manager = StateManager(self.test_file)
-        manager.read()
-        backup = self.test_file.with_suffix(".bak.json")
-        # Backup preferred; if implementation always resets, at least no crash
-        self.assertTrue(isinstance(manager.read(), dict))
+        result = manager.read()
+        self.assertIsInstance(result, dict)
+        self.assertEqual(result, {})
 
 
 class TestRubricStore(unittest.TestCase):
